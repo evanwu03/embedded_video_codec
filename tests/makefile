@@ -10,7 +10,7 @@ LDLIBS   = -L$(CPPUTEST_HOME)/lib -lCppUTest -lCppUTestExt
 # Build directory
 BUILD_DIR = build
 # Test sources (C++)
-TEST_SRCS = AllTests.cpp tests.cpp
+TEST_SRCS = AllTests.cpp decoderTests.cpp
 # Production sources (C)
 SRC_SRCS  = ../src/video.c
 
