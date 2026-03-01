@@ -31,7 +31,6 @@ typedef struct {
 
     // To-do:  Error flags can be included here if any are implemented  in future
 
-
 } video_sm_ctx_t;
 
 
@@ -39,12 +38,13 @@ typedef struct {
     video_stream_header_t config;
     video_sm_ctx_t state; 
      
-    const uint8_t* stream; // base pointer to video file 
-    unsigned long cur;  // current byte index into the stream
-    unsigned long len;     // total bytes in the stream
+    const uint8_t* stream;                // base pointer to video file 
+    uint32_t palette[MAX_PALETTE_COLORS]; // pointer to palette 
+    uint16_t palette_count;
+    unsigned long cur;                     // current byte index into the stream
+    unsigned long len;                     // total bytes in the stream
 
 } video_handler_t;
-
 
 
 

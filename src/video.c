@@ -1,5 +1,7 @@
 
 #include "../include/video.h"
+#include "../include/video_fsm.h"
+
 
 const uint8_t video_stream[] = {
 
