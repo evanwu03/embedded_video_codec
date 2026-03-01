@@ -26,7 +26,8 @@ typedef struct {
 } video_stream_header_t;
 
 #define VIDEO_STREAM_HEADER_SIZE 9U 
-static_assert(sizeof(video_stream_header_t) >= VIDEO_STREAM_HEADER_SIZE, "video_stream_header_t can not hold parsed field. Please check implementation");
+_Static_assert(sizeof(video_stream_header_t) >= VIDEO_STREAM_HEADER_SIZE, "video_stream_header_t can not hold parsed field. Please check implementation");
+
 
 // User defines this depending on resolution of display 
 #define MAX_WIDTH (128U)  

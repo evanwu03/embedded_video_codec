@@ -18,10 +18,11 @@
 
 
 // Pixel art byte map
-//#include "../include/pixel_map.h"
+#include "../include/pixel_map.h"
 
-// Video file 
-#include "video.h"
+
+// Video Player 
+#include "../include/video.h"
 
 
 #define WIDTH 128
@@ -91,7 +92,7 @@ int main(void)
     //lcd_draw_image(orca_128x128_map, 0, 0, WIDTH, HEIGHT);
     lcd_draw_image(wolf_girl_map, 0, 0, WIDTH, HEIGHT);
 
-
+    
     while (1)
     {
 
