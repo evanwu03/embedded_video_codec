@@ -36,13 +36,12 @@ typedef struct {
 
 
 typedef struct { 
-
-    video_stream_header_t* config;
+    video_stream_header_t config;
     video_sm_ctx_t state; 
-
-    // To-do:
-    // Could hold the current frame here idk
-    
+     
+    const uint8_t* stream; // base pointer to video file 
+    unsigned long cur;  // current byte index into the stream
+    unsigned long len;     // total bytes in the stream
 
 } video_handler_t;
 
