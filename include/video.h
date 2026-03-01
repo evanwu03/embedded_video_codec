@@ -73,10 +73,12 @@ typedef struct {
     video_stream_header_t config;
     video_sm_ctx_t state; 
      
-    const uint8_t* stream;                // base pointer to video file 
-    uint32_t palette[MAX_PALETTE_COLORS]; // pointer to palette 
+    const uint8_t* stream;                 // base pointer to video file 
+    uint32_t palette[MAX_PALETTE_COLORS];  // pointer to palette 
     unsigned long cur;                     // current byte index into the stream
     unsigned long len;                     // total bytes in the stream
+    uint16_t* framebuf;                    // pointer to frame buffer
+    unsigned long framebuf_pixels;         // size of framebuffer in pixels 
 
 } video_handler_t;
 
@@ -84,6 +86,16 @@ typedef struct {
 
 void video_init(video_handler_t* video, const uint8_t *stream, unsigned long len);
 
+// Attaches video handler to output buffer
+bool video_set_output_buffer(video_handler_t* video, uint16_t* framebuf, const unsigned long framebuf_len);
+
+
+// Decoding Functions
+void decode_frame(video_handler_t* video); 
+
+
+// Tranmsit frame to LCD 
+void transmit_frame(video_handler_t* video);
 
 
 typedef enum {
@@ -103,10 +115,12 @@ typedef enum {
 } parse_palette_status_t;
 
 
-// Functions
+// Parsing Functions
 parse_header_status_t parse_stream_header(video_handler_t* video);
 
 parse_palette_status_t parse_palette(video_handler_t* video);
+
+
 
 
 #ifdef __cplusplus 

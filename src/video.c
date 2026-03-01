@@ -12,15 +12,49 @@ unsigned long video_len = sizeof(video_stream);
 
 
 
-void video_init(video_handler_t *v, const uint8_t *stream, unsigned long len)
+void video_init(video_handler_t *video, const uint8_t *stream, unsigned long len)
 {
-    memset(v, 0, sizeof(*v));
-    v->state.current_state = VIDEO_STATE_IDLE;
-    v->state.previous_state = VIDEO_STATE_IDLE;
-    v->stream = stream;
-    v->cur = 0;
-    v->len = len;
+    memset(video, 0, sizeof(*video));
+    video->state.current_state = VIDEO_STATE_IDLE;
+    video->state.previous_state = VIDEO_STATE_IDLE;
+    video->stream = stream;
+    video->cur = 0;
+    video->len = len;
+    video->framebuf = NULL;
+    video->framebuf_pixels = 0;
     
+}
+
+
+bool video_set_output_buffer(video_handler_t* video, uint16_t* framebuf, const unsigned long framebuf_pixels) { 
+
+    if (video == NULL || framebuf == NULL || framebuf_pixels == 0) return false;
+ 
+
+    // Validate with internally stored width*height 
+    unsigned long required_size = video->config.height * video->config.width;
+    if (framebuf_pixels < required_size) return false;
+
+    video->framebuf = framebuf;
+    video->framebuf_pixels = framebuf_pixels;
+    return true;
+
+}
+
+
+
+void decode_frame(video_handler_t* video) { 
+
+
+
+}
+
+
+// Tranmsit frame to LCD 
+void transmit_frame(video_handler_t* video) { 
+
+
+
 }
 
 

@@ -27,7 +27,10 @@
 
 #define WIDTH 128
 #define HEIGHT 128 
+ 
 
+// Frame output buffer
+static uint16_t frame_buf[WIDTH*HEIGHT];
 
 
 // Peripherals 

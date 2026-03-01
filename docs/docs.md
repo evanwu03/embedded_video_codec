@@ -90,6 +90,9 @@ Goals for today are to:
 - Other than that I mainly refactored and tidied up the codebase a bit, adding comments where necessary or deleting deprecated code. Currently a problem I've noticed is that extreme memory usage for larger videos during quantization that does cause my PC to crash. So it dawned on me that maybe it's a really bad idea to try and brute force all pairwise euclidean distances in my quantizer, so I have decided to be at least a little smarter and preallocate the quantized frames and quantize frame by frame instead. This is still not a scalable approach as I've encountered with videos of at least 30 seconds and resolution of upwards to 1020x780p. Preallocating a buffer will not work here due to excessive memory usage.
 
 
-# 2026228
+# 2026228 & 20250301
+Most work these past two days has been defining the state machine and refactoring data types. 
+I've decided to create one structure to handle video data and operations. This is helped simplify my test as well since
+data can be kept encapsulated by video object
 
 
