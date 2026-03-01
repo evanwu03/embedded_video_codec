@@ -69,34 +69,29 @@ parse_header_status_t parse_stream_header(video_handler_t* video) {
 }
 
 
-parse_palette_status_t parse_palette(
-    uint32_t *palette,
-    const uint8_t *stream,
-    unsigned long stream_len,
-    unsigned long num_colors
-)
+parse_palette_status_t parse_palette(video_handler_t* video) 
 {
     unsigned long expected_palette_bytes;
     unsigned int palette_start;
 
     
-    expected_palette_bytes = num_colors * PALETTE_BYTES_PER_COLOR;
+    expected_palette_bytes = video->config.num_colors * PALETTE_BYTES_PER_COLOR;
     palette_start = VIDEO_STREAM_HEADER_SIZE; // Start after the header
 
     /* --- ensure palette fits in stream buffer --- */
-    if (stream_len < palette_start + expected_palette_bytes)
+    if (video->len < palette_start + expected_palette_bytes)
         return PAL_INCOMPLETE;
 
     /* --- parse palette --- */
-    for (unsigned long i = 0; i < num_colors; i++) {
+    for (unsigned long i = 0; i < video->config.num_colors; i++) {
         unsigned int off = palette_start + (i * 3);
 
-        uint8_t r = stream[off + 0];
-        uint8_t g = stream[off + 1];
-        uint8_t b = stream[off + 2];
+        uint8_t r = video->stream[off + 0];
+        uint8_t g = video->stream[off + 1];
+        uint8_t b = video->stream[off + 2];
 
         /* canonical internal format: 0x00RRGGBB */
-        palette[i] = ((uint32_t)r << 16) |
+        video->palette[i] = ((uint32_t)r << 16) |
                      ((uint32_t)g << 8)  |
                      ((uint32_t)b);
     }

@@ -180,7 +180,6 @@ TEST(parseHeaderTests, tooManyColorsInPalette) {
 }
 
 
-/*
 TEST_GROUP(parsePaletteTests) { 
 
     void setup() {
@@ -211,25 +210,24 @@ TEST(parsePaletteTests, successfulParse) {
         // color 3 
         0xFF, 0xFF, 0xFF  // white
     };
-    unsigned long video_len = sizeof(stream);
 
 
+    video_handler_t video; 
+    video_init(&video, stream, sizeof(stream));
 
-    video_stream_header_t header = {0};
-    uint32_t palette[MAX_PALETTE_COLORS]; 
 
+    parse_header_status_t  header_status = parse_stream_header(&video);    
+    parse_palette_status_t palette_status = parse_palette(&video); 
 
-    parse_header_status_t  header_status = parse_stream_header(&header, stream, video_len);    
-    parse_palette_status_t palette_status = parse_palette(palette, stream, MAX_PALETTE_COLORS, header.num_colors); 
-
+    
     CHECK_EQUAL(HDR_OK, header_status);
     CHECK_EQUAL(PAL_OK, palette_status);
 
 
-    CHECK_EQUAL(true, palette_matches_stream(palette, stream, header.num_colors));
+    CHECK_EQUAL(true, palette_matches_stream(video.palette, stream, video.config.num_colors));
 
 
-    //printPalette(palette, header.num_colors);
+    printPalette(video.palette, video.config.num_colors);
 
 };  
 
@@ -245,16 +243,15 @@ TEST(parsePaletteTests, paletteIncomplete) {
         0x00,// no palette data
     };
 
-    unsigned long video_len = sizeof(stream);
+    video_handler_t video; 
+    video_init(&video, stream, sizeof(stream));
 
-    video_stream_header_t header = {0};
-    uint32_t palette[MAX_PALETTE_COLORS];
 
-    parse_header_status_t header_status = parse_stream_header(&header, stream, video_len);
+    parse_header_status_t  header_status = parse_stream_header(&video);    
+    parse_palette_status_t palette_status = parse_palette(&video); 
 
-    parse_palette_status_t palette_status = parse_palette(palette, stream, MAX_PALETTE_COLORS, header.num_colors);
+    //printPalette(video.palette, video.config.num_colors);
 
     CHECK_EQUAL(HDR_OK, header_status);
     CHECK_EQUAL(PAL_INCOMPLETE, palette_status);
 }
- */

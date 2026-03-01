@@ -16,6 +16,18 @@ extern const uint8_t video_stream[];
 
 extern unsigned long video_len;
 
+// User defines this depending on resolution of display 
+#define MAX_WIDTH (128U)  
+#define MAX_HEIGHT (128U)
+
+// This file ID is expected at very beginning of header
+#define FILE_ID (0x5643U)
+
+// Maximum palette colors and Bytes per pixel (bpp)
+#define MAX_PALETTE_COLORS (256U)
+#define PALETTE_BYTES_PER_COLOR (3U)
+
+#define VIDEO_STREAM_HEADER_SIZE 9U 
 
 /// @brief defines the stream header containing metadata for a video file
 typedef struct { 
@@ -26,7 +38,6 @@ typedef struct {
     uint8_t codec_flags;
 } video_stream_header_t;
 
-#define VIDEO_STREAM_HEADER_SIZE 9U 
 
 #ifdef __cplusplus 
 static_assert(sizeof(video_stream_header_t) >= VIDEO_STREAM_HEADER_SIZE, "video_stream_header_t can not hold parsed field. Please check implementation");
@@ -35,29 +46,6 @@ _Static_assert(sizeof(video_stream_header_t) >= VIDEO_STREAM_HEADER_SIZE, "video
 #endif
 
 
-// User defines this depending on resolution of display 
-#define MAX_WIDTH (128U)  
-#define MAX_HEIGHT (128U)
-
-// This file ID is expected at very beginning of header
-#define FILE_ID (0x5643U)
-
-
-typedef enum {
-    HDR_OK,
-    HDR_INCOMPLETE,
-    HDR_ERR_INVALID_ID,
-    HDR_ERR_DIM_ZERO,
-    HDR_ERR_DIM_TOO_LARGE,
-    HDR_ERR_NO_COLORS,
-    HDR_ERR_TOO_MANY_COLORS
-} parse_header_status_t;
-
-
-
-// Maximum palette colors and Bytes per pixel (bpp)
-#define MAX_PALETTE_COLORS (256U)
-#define PALETTE_BYTES_PER_COLOR (3U)
 
 
 // Terminology
@@ -96,6 +84,19 @@ typedef struct {
 
 void video_init(video_handler_t* video, const uint8_t *stream, unsigned long len);
 
+
+
+typedef enum {
+    HDR_OK,
+    HDR_INCOMPLETE,
+    HDR_ERR_INVALID_ID,
+    HDR_ERR_DIM_ZERO,
+    HDR_ERR_DIM_TOO_LARGE,
+    HDR_ERR_NO_COLORS,
+    HDR_ERR_TOO_MANY_COLORS
+} parse_header_status_t;
+
+
 typedef enum { 
     PAL_OK,
     PAL_INCOMPLETE,
@@ -103,17 +104,9 @@ typedef enum {
 
 
 // Functions
-parse_header_status_t parse_stream_header(video_handler_t* hdr);
+parse_header_status_t parse_stream_header(video_handler_t* video);
 
-parse_palette_status_t parse_palette(
-    uint32_t *palette,
-    const uint8_t *buf,
-    unsigned long buf_len,
-    unsigned long num_colors
-);
-
-
-
+parse_palette_status_t parse_palette(video_handler_t* video);
 
 
 #ifdef __cplusplus 
