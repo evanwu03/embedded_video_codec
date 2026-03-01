@@ -77,8 +77,16 @@ typedef struct {
     uint32_t palette[MAX_PALETTE_COLORS];  // pointer to palette 
     unsigned long cur;                     // current byte index into the stream
     unsigned long len;                     // total bytes in the stream
-    uint16_t* framebuf;                    // pointer to frame buffer
-    unsigned long framebuf_pixels;         // size of framebuffer in pixels 
+
+
+    uint8_t* frame_buf;                    // pointer to current frame indices
+    unsigned long frame_pixels;            // size of framebuffer in pixels 
+    uint8_t* tmp_delta;                    // pointer to hold frames delta  
+    uint16_t* tx_line;                     // pointer to 128-pixel line buffer
+    unsigned long tx_line_pixels;          // size of tx_line in pixels
+    unsigned long frame_pos;               // current 
+
+    bool start_requested;
 
 } video_handler_t;
 
@@ -87,15 +95,20 @@ typedef struct {
 void video_init(video_handler_t* video, const uint8_t *stream, unsigned long len);
 
 // Attaches video handler to output buffer
-bool video_set_output_buffer(video_handler_t* video, uint16_t* framebuf, const unsigned long framebuf_len);
+bool video_set_output_buffer(video_handler_t* video, uint8_t* framebuf, const unsigned long framebuf_len);
 
 
 // Decoding Functions
-void decode_frame(video_handler_t* video); 
+void rle_decode_frame(video_handler_t* video); 
+
+void delta_decode_frame(video_handler_t* video);
 
 
 // Tranmsit frame to LCD 
-void transmit_frame(video_handler_t* video);
+bool video_prepare_tx_line(video_handler_t* video);
+
+
+uint16_t pack_bgr565(const uint32_t bgr32);
 
 
 typedef enum {

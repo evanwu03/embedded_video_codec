@@ -21,7 +21,7 @@ void video_sm_init(video_handler_t* video);
 
 void video_sm_run(video_handler_t* video);
 
-void video_sm_transition(video_handler_t* video);
+void video_sm_transition(video_handler_t* video, video_state_t next_state);
 
 
 // Definition of state handlers 

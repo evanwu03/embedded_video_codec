@@ -29,8 +29,8 @@
 #define HEIGHT 128 
  
 
-// Frame output buffer
-static uint16_t frame_buf[WIDTH*HEIGHT];
+// current frame palette index buffer
+static uint8_t frame_buf[WIDTH*HEIGHT];
 
 
 // Peripherals 

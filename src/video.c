@@ -20,41 +20,117 @@ void video_init(video_handler_t *video, const uint8_t *stream, unsigned long len
     video->stream = stream;
     video->cur = 0;
     video->len = len;
-    video->framebuf = NULL;
-    video->framebuf_pixels = 0;
-    
+
+    video->frame_buf = NULL;
+    video->frame_pixels = 0;
+    video->tmp_delta = NULL;
+
+    video->tx_line = NULL;
+    video->tx_line_pixels = 0;
+    video->frame_pos = 0;
 }
 
 
-bool video_set_output_buffer(video_handler_t* video, uint16_t* framebuf, const unsigned long framebuf_pixels) { 
+bool video_set_output_buffer(video_handler_t* video, uint8_t* frame_buf, const unsigned long framebuf_pixels) { 
 
-    if (video == NULL || framebuf == NULL || framebuf_pixels == 0) return false;
+    if (video == NULL || frame_buf == NULL || framebuf_pixels == 0) return false;
  
 
     // Validate with internally stored width*height 
     unsigned long required_size = video->config.height * video->config.width;
     if (framebuf_pixels < required_size) return false;
 
-    video->framebuf = framebuf;
-    video->framebuf_pixels = framebuf_pixels;
+    video->frame_buf = frame_buf;
+    video->frame_pixels = framebuf_pixels;
     return true;
 
 }
 
 
+void rle_decode_frame(video_handler_t* video) { 
 
-void decode_frame(video_handler_t* video) { 
+    unsigned long pixels_decoded = 0;
+    unsigned long pos = video->cur;
 
 
+    // Run length decode
+    while (pixels_decoded < video->frame_pixels && pos < video->len) { 
+
+
+        // Parse header byte
+        uint8_t run_len = video->stream[pos] & 0x7F;
+        bool is_run  = (video->stream[pos] & 0x80) != 0;
+        pos++;
+
+        if(is_run) { 
+
+            uint8_t run_value = video->stream[pos];
+
+            for (int i = 0; i < run_len; i++) { 
+                video->tmp_delta[pixels_decoded] = run_value;
+                pixels_decoded++;
+            }
+
+            pos++;
+        }
+        else { 
+
+            for (int i = 0; i < run_len; i ++) { 
+                video->tmp_delta[pixels_decoded] = video->stream[pos];
+                pixels_decoded++;
+                pos++;
+            }
+        }
+    }
+
+    // Update current stream pointer
+    video->cur = pos; 
+}
+
+
+void delta_decode_frame(video_handler_t* video) { 
+
+    unsigned long n = video->frame_pixels;
+
+    for (int i = 0; i < n; i ++) { 
+        video->frame_buf[i] = (uint8_t)(video->frame_buf[i] + video->tmp_delta[i]);
+    }
 
 }
 
 
 // Tranmsit frame to LCD 
-void transmit_frame(video_handler_t* video) { 
+bool video_prepare_tx_line(video_handler_t* video) { 
+
+    unsigned long width = video->tx_line_pixels;
+
+    if (video->frame_pos >= video->frame_pixels) {
+        return false; // nothing to send / invalid
+    }
+
+    const unsigned long remaining = video->frame_pixels - video->frame_pos;
+    const unsigned long n = (remaining < width) ? remaining : width; // skeptical about how this is worded, should clamp to <= width either way
+
+    for (size_t j = 0; j < n; j++) {
+        const uint8_t idx = video->frame_buf[video->frame_pos + j];
+        video->tx_line[j] = pack_bgr565(video->palette[idx]);
+    }
+
+    // Don't advance frame_pos yet, do after DMA completes
+
+    return true;  
+}
 
 
+// probably make static inline
+uint16_t pack_bgr565(const uint32_t c) {
+    uint8_t r = (uint8_t)((c >> 16) & 0xFF);
+    uint8_t g = (uint8_t)((c >>  8) & 0xFF);
+    uint8_t b = (uint8_t)( c        & 0xFF);
 
+    return (uint16_t)(((uint16_t)(b >> 3) << 11) |
+                      ((uint16_t)(g >> 2) << 5)  |
+                      ((uint16_t)(r >> 3) << 0));
 }
 
 
@@ -98,6 +174,10 @@ parse_header_status_t parse_stream_header(video_handler_t* video) {
     video->config.height      = height; 
     video->config.num_colors  = num_colors;
     video->config.codec_flags = codec_flags;
+    
+
+    // Update file index 
+    video->cur += VIDEO_STREAM_HEADER_SIZE; 
 
     return HDR_OK;
 }
@@ -129,6 +209,9 @@ parse_palette_status_t parse_palette(video_handler_t* video)
                      ((uint32_t)g << 8)  |
                      ((uint32_t)b);
     }
+
+    // Update current stream index
+    video->cur += expected_palette_bytes;
 
     return PAL_OK;
 }
