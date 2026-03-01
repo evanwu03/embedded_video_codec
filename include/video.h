@@ -11,6 +11,7 @@ extern "C" {
 #include <assert.h>
 #include <stdbool.h>
 
+
 extern const uint8_t video_stream[];
 
 extern unsigned long video_len;
@@ -26,7 +27,12 @@ typedef struct {
 } video_stream_header_t;
 
 #define VIDEO_STREAM_HEADER_SIZE 9U 
+
+#ifdef __cplusplus 
+static_assert(sizeof(video_stream_header_t) >= VIDEO_STREAM_HEADER_SIZE, "video_stream_header_t can not hold parsed field. Please check implementation");
+#else 
 _Static_assert(sizeof(video_stream_header_t) >= VIDEO_STREAM_HEADER_SIZE, "video_stream_header_t can not hold parsed field. Please check implementation");
+#endif
 
 
 // User defines this depending on resolution of display 
@@ -53,6 +59,43 @@ typedef enum {
 #define MAX_PALETTE_COLORS (256U)
 #define PALETTE_BYTES_PER_COLOR (3U)
 
+
+// Terminology
+// sm - state machine
+// ctx - context 
+
+typedef enum { 
+    VIDEO_STATE_IDLE = 0,
+    VIDEO_STATE_PARSE_HEADER,
+    VIDEO_STATE_DECODE_FRAME,
+    VIDEO_STATE_TRANSMIT_FRAME
+} video_state_t;
+
+
+typedef struct { 
+    video_state_t current_state;
+    video_state_t previous_state;
+
+    // To-do:  Error flags can be included here if any are implemented  in future
+
+} video_sm_ctx_t;
+
+
+typedef struct { 
+    video_stream_header_t config;
+    video_sm_ctx_t state; 
+     
+    const uint8_t* stream;                // base pointer to video file 
+    uint32_t palette[MAX_PALETTE_COLORS]; // pointer to palette 
+    unsigned long cur;                     // current byte index into the stream
+    unsigned long len;                     // total bytes in the stream
+
+} video_handler_t;
+
+
+
+void video_init(video_handler_t* video, const uint8_t *stream, unsigned long len);
+
 typedef enum { 
     PAL_OK,
     PAL_INCOMPLETE,
@@ -60,11 +103,7 @@ typedef enum {
 
 
 // Functions
-parse_header_status_t parse_stream_header(
-    video_stream_header_t* hdr, 
-    const uint8_t stream[],
-    const unsigned long file_len
-);
+parse_header_status_t parse_stream_header(video_handler_t* hdr);
 
 parse_palette_status_t parse_palette(
     uint32_t *palette,
@@ -72,6 +111,7 @@ parse_palette_status_t parse_palette(
     unsigned long buf_len,
     unsigned long num_colors
 );
+
 
 
 

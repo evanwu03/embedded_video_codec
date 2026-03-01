@@ -1,7 +1,6 @@
 
 #include "../include/video.h"
-#include "../include/video_fsm.h"
-
+#include <string.h>
 
 const uint8_t video_stream[] = {
 
@@ -12,17 +11,32 @@ const uint8_t video_stream[] = {
 unsigned long video_len = sizeof(video_stream);
 
 
-parse_header_status_t parse_stream_header(video_stream_header_t* hdr, const uint8_t stream[], const unsigned long file_len) {
 
-    if (file_len < VIDEO_STREAM_HEADER_SIZE) { 
+void video_init(video_handler_t *v, const uint8_t *stream, unsigned long len)
+{
+    memset(v, 0, sizeof(*v));
+    v->state.current_state = VIDEO_STATE_IDLE;
+    v->state.previous_state = VIDEO_STATE_IDLE;
+    v->stream = stream;
+    v->cur = 0;
+    v->len = len;
+    
+}
+
+
+parse_header_status_t parse_stream_header(video_handler_t* video) {
+
+
+
+    if (video->len < VIDEO_STREAM_HEADER_SIZE) { 
         return HDR_INCOMPLETE; // the file can not be less than size of header
     }
 
-    uint16_t file_format = (stream[0] << 8) | stream[1];
-    uint16_t width       = (stream[2] << 8) | stream[3];
-    uint16_t height      = (stream[4] << 8) | stream[5];
-    uint16_t num_colors  = (stream[6] << 8) | stream[7];
-    uint8_t codec_flags  = stream[8];
+    uint16_t file_format = (video->stream[0] << 8) | video->stream[1];
+    uint16_t width       = (video->stream[2] << 8) | video->stream[3];
+    uint16_t height      = (video->stream[4] << 8) | video->stream[5];
+    uint16_t num_colors  = (video->stream[6] << 8) | video->stream[7];
+    uint8_t codec_flags  = video->stream[8];
 
     if (file_format != FILE_ID) { 
         return HDR_ERR_INVALID_ID;
@@ -45,11 +59,11 @@ parse_header_status_t parse_stream_header(video_stream_header_t* hdr, const uint
     }
 
 
-    hdr->file_format = file_format;
-    hdr->width       = width;
-    hdr->height      = height; 
-    hdr->num_colors  = num_colors;
-    hdr->codec_flags = codec_flags;
+    video->config.file_format = file_format;
+    video->config.width       = width;
+    video->config.height      = height; 
+    video->config.num_colors  = num_colors;
+    video->config.codec_flags = codec_flags;
 
     return HDR_OK;
 }

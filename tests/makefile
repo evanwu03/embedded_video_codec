@@ -12,7 +12,7 @@ BUILD_DIR = build
 # Test sources (C++)
 TEST_SRCS = AllTests.cpp decoderTests.cpp
 # Production sources (C)
-SRC_SRCS  = ../src/video.c
+SRC_SRCS  = ../src/video.c ../src/video_fsm.c
 
 # Objects
 TEST_OBJS = $(TEST_SRCS:%.cpp=build/%.o)
