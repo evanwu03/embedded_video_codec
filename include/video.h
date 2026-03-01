@@ -103,8 +103,7 @@ void rle_decode_frame(video_handler_t* video);
 
 void delta_decode_frame(video_handler_t* video);
 
-
-// Tranmsit frame to LCD 
+// Prepare tx line buffer for sending to LCD
 bool video_prepare_tx_line(video_handler_t* video);
 
 

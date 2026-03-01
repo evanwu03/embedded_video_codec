@@ -45,6 +45,9 @@ void video_sm_transition(video_handler_t* video, video_state_t next_state){
 
 // Definition of state handlers 
 
+
+/// @brief VIDEO_STATE_IDLE Callback function
+/// @param video 
 void video_state_idle(video_handler_t* video) { 
 
     // Start of video has been requested
@@ -56,24 +59,68 @@ void video_state_idle(video_handler_t* video) {
     // Do nothing otherwise
 }
 
-
+/// @brief VIDEO_STATE_PARSE_HEADER Callback function
+/// @param video 
 void video_state_parse_header(video_handler_t* video) { 
 
 
+    // Call parsing functions
+    parse_header_status_t header_status = parse_stream_header(video);
+
+    if(header_status != HDR_OK) { 
+        video_sm_transition(video, VIDEO_STATE_IDLE); // Maybe we should be an error state
+        return;
+    }
+
+    parse_palette_status_t palette_status = parse_palette(video);
+
+
+    if(palette_status != PAL_OK) { 
+        video_sm_transition(video, VIDEO_STATE_IDLE); // Maybe we should go to an error state
+        return;
+    }
+
+    // If successful start decoding
+    video_sm_transition(video, VIDEO_STATE_DECODE_FRAME);
 
 }
 
+/// @brief VIDEO_STATE_DECODE Callback function
+/// @param video 
 void video_state_decode(video_handler_t* video)  {
 
+    // begin RLE decoding frame
+    rle_decode_frame(video);
 
+    
+    delta_decode_frame(video);
+
+    video_sm_transition(video, VIDEO_STATE_TRANSMIT_FRAME);
 
 }
 
 
+/// @brief VIDEO_STATE_TRANSMIT Callback function
+/// @param video 
 void video_state_transmit(video_handler_t* video) { 
 
+    unsigned long width = video->tx_line_pixels;
 
+    if (video->frame_pos >= video->frame_pixels) { 
+        // Done sending this frame
+        video->frame_pos = 0; 
+        video_sm_transition(video, VIDEO_STATE_DECODE_FRAME);
+        return;
+    }
 
+    /*
+    if DMA is not busy 
+
+    video_prepare_tx_line(video);
+
+    DMA is busy 
+    send line to DMA 
+    */
 }
 
 
