@@ -23,15 +23,16 @@
 
 // Video Player 
 #include "../include/video.h"
+#include "../include/video_fsm.h"
 
 
+// User sets dimensions of LED here
 #define WIDTH 128
 #define HEIGHT 128 
  
 
 // current frame palette index buffer
 static uint8_t frame_buf[WIDTH*HEIGHT];
-
 
 // Peripherals 
 struct wdt wdt_a;
@@ -90,9 +91,11 @@ int main(void)
     lcd_draw_image(wolf_girl_map, 0, 0, WIDTH, HEIGHT);
 
     
+
+    // Run state machine here
     while (1)
     {
-
+        //video_sm_run(&video);
     }
    
 }

@@ -87,6 +87,8 @@ typedef struct {
     unsigned long frame_pos;               // current 
 
     bool start_requested;
+    bool tx_started;
+    bool tx_dma_busy;
 
 } video_handler_t;
 

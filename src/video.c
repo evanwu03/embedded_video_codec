@@ -28,6 +28,10 @@ void video_init(video_handler_t *video, const uint8_t *stream, unsigned long len
     video->tx_line = NULL;
     video->tx_line_pixels = 0;
     video->frame_pos = 0;
+
+    video->start_requested = false;
+    video->tx_dma_busy = false;
+    video->tx_started  = false;
 }
 
 

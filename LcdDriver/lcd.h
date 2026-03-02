@@ -19,6 +19,16 @@ void lcd_init();
 void lcd_set_window(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1); // Wrap coordinates into struct in future?
 
 
+/// @brief send pixel buffer over SPI DMA
+/// @param buf pointer to buffef 
+/// @param width size of buffer
+void lcd_tx_pixels_dma(uint16_t* buf, unsigned long width);
+
+
+
+/// @brief Enables memory write mode for LCD 
+void lcd_ramwr(); 
+
 /// @brief Draw a single pixel at (x,y) pixel
 /// @param x x coordinate
 /// @param y y coordinate

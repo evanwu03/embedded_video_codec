@@ -184,6 +184,20 @@ void lcd_set_window(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1) {
 
 }
 
+
+void lcd_tx_pixels_dma(uint16_t* buf, unsigned long width) { 
+
+
+
+}
+
+void lcd_ramwr() {
+
+    // Sets LCD for R/W mode
+}
+
+
+
 void lcd_draw_pixel(const uint16_t x, const uint16_t y, const uint16_t red, const uint16_t green, const uint16_t blue) { 
 
     lcd_set_window(x, y, x, y);
