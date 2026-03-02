@@ -35,7 +35,7 @@ void video_init(video_handler_t *video, const uint8_t *stream, unsigned long len
 }
 
 
-bool video_set_output_buffer(video_handler_t* video, uint8_t* frame_buf, const unsigned long framebuf_pixels) { 
+bool video_set_frame_buffer(video_handler_t* video, uint8_t* frame_buf, const unsigned long framebuf_pixels) { 
 
     if (video == NULL || frame_buf == NULL || framebuf_pixels == 0) return false;
  

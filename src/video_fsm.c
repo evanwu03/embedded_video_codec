@@ -26,7 +26,7 @@ void video_sm_init(video_handler_t* video) {
 
 
 void video_sm_run(video_handler_t* video) { 
-    // To-doDon't continue if video has errors maybe
+    // To-do Don't continue if video has errors maybe
     state_handlers[video->state.current_state](video);
 }
 
@@ -50,6 +50,7 @@ void video_state_idle(video_handler_t* video) {
     // Start of video has been requested
     if(video->start_requested) { 
         video->start_requested = false;
+        video->cur = 0; // Make sure we start reading from start of file
         video_sm_transition(video, VIDEO_STATE_PARSE_HEADER);
     }
 
@@ -91,6 +92,9 @@ void video_state_decode(video_handler_t* video)  {
         video_sm_transition(video, VIDEO_STATE_IDLE);
         return;
     }
+
+
+    // To-do should decode functions report status? 
 
     // begin RLE decoding frame
     rle_decode_frame(video);

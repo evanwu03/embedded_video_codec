@@ -1,13 +1,13 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
   <diagram name="Page-1" id="woUTycC5hhNP64IwZlBw">
-    <mxGraphModel dx="1133" dy="803" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1360" dy="963" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="CCR73866nuBq3d0Z0GH--22" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;dashed=1;dashPattern=12 12;" parent="1" vertex="1">
           <mxGeometry x="190" y="500" width="470" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="CCR73866nuBq3d0Z0GH--1" value="To Do :&amp;nbsp;&lt;div&gt;&lt;ul&gt;&lt;li&gt;finished parsing functions for header and palette&amp;nbsp;&lt;/li&gt;&lt;li&gt;Implement state machine for video playback&lt;/li&gt;&lt;li&gt;translate decoding API to MCU&lt;/li&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+        <mxCell id="CCR73866nuBq3d0Z0GH--1" value="To Do :&amp;nbsp;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;strike&gt;finished parsing functions for header and palette&amp;nbsp;&lt;/strike&gt;&lt;/li&gt;&lt;li&gt;&lt;strike&gt;Implement state machine for video playback&lt;/strike&gt;&lt;/li&gt;&lt;li&gt;&lt;strike&gt;translate decoding API to MCU&lt;/strike&gt;&lt;/li&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="120" y="90" width="320" height="120" as="geometry" />
         </mxCell>
         <mxCell id="CCR73866nuBq3d0Z0GH--6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="CCR73866nuBq3d0Z0GH--3" target="CCR73866nuBq3d0Z0GH--4" edge="1">
@@ -71,8 +71,8 @@
         <mxCell id="CCR73866nuBq3d0Z0GH--23" value="FRAME LOOP" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="210" y="500" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="CCR73866nuBq3d0Z0GH--25" value="*Probably want a way to replay a video in the future or a nice menu&amp;nbsp; in the future" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="160" y="218" width="450" height="30" as="geometry" />
+        <mxCell id="CCR73866nuBq3d0Z0GH--25" value="*Probably want a way to replay a video in the future or a nice menu&amp;nbsp; in the future.&lt;div&gt;I could just implement an ISR to check if a button was pressed&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="130" y="205" width="450" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Hs8jLWQSXVd4nhGKKPOX-2" value="If there is an error while parsing" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="435" y="348" width="190" height="30" as="geometry" />
