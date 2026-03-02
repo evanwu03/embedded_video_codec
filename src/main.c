@@ -13,12 +13,16 @@
 #include "../hal/include/wdt.h"
 #include "../hal/include/gpio.h"
 
+// Driverlib
+#include <ti/devices/msp432p4xx/driverlib/driverlib.h>
+
+
 // LCD driver 
 #include "../LcdDriver/lcd.h"
 
 
 // Pixel art byte map
-#include "../include/pixel_map.h"
+//#include "../include/pixel_map.h"
 
 
 // Video Player 
@@ -70,13 +74,27 @@ static uint8_t tx_buf[2*WIDTH];
 
 int main(void)
 {
+
+    // Clock configuration stuff
+    //CS_setDCOCenteredFrequency(CS_DCO_FREQUENCY_12);
+    CS_setDCOCenteredFrequency(CS_DCO_FREQUENCY_24);
+    CS_initClockSignal(CS_SMCLK, CS_DCOCLK_SELECT, CS_CLOCK_DIVIDER_1);
+    
+
+    // Watchdog timer configuration
     WDT_hold(&wdt_a);
 
     WDT_init(&wdt_a, WDT_A_BASE, &wdt_config_interval_timer_1s);
     NVIC_EnableIRQ(WDT_A_IRQn);
 
-    UART_initModule(EUSCI_A0, &UART_A0_config); 
-    UART_enableModule(EUSCI_A0); 
+    // Watchdog LED
+    gpio_init_output(&led1, PORT1_BASE, BIT0);
+    gpio_write(&led1, false); // Turn off LED initially
+
+
+    // UART configuration
+    uart_initModule(EUSCI_A0, &UART_A0_config); 
+    uart_enableModule(EUSCI_A0); 
 
     // Enable UART0 Pins
     // P1.2->RX
@@ -85,8 +103,6 @@ int main(void)
     P1->SEL1 &= ~(BIT2 | BIT3);
 
     
-    gpio_init_output(&led1, PORT1_BASE, BIT0);
-    gpio_write(&led1, false); // Turn off LED initially
 
 
     lcd_init();
@@ -111,6 +127,7 @@ int main(void)
 
     
     // Request start 
+    // To-do user can press button to start video
     video.start_requested = true;
 
     // Run state machine here

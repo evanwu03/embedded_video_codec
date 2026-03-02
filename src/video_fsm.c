@@ -80,7 +80,7 @@ void video_state_parse_header(video_handler_t* video) {
         return;
     }
 
-    // If successful start decoding
+    // If successful transition to decoding state
     video_sm_transition(video, VIDEO_STATE_DECODE_FRAME);
 
 }
@@ -139,16 +139,10 @@ void video_state_transmit(video_handler_t* video) {
     }
 
     // Prepare next line of pixels into tx_line
-    // This should fill exactly 'width' pixels if frame_pixels == width*height.
-    /*  if (!video_prepare_tx_line(video)) {     // or video_prepare_tx_line(v)
-        // treat as error: invalid frame_pos, palette index out of range, etc.
-        video_sm_transition(video, VIDEO_STATE_IDLE); // or FAULT
-        return;
-    } */
     video_prepare_tx_line(video);
 
     // Start DMA on this line (width * 2 bytes)
-    lcd_tx_pixels_dma(video->tx_line, 2*video->tx_line_pixels);
+    lcd_tx_pixels_dma(video->tx_line, 2*video->tx_line_pixels); //  To-Do don't make this hardcoded
 
     // Advance frame_pos AFTER DMA completes (recommended)
     // So do NOT increment here; increment in DMA done callback.

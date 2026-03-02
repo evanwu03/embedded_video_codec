@@ -71,11 +71,11 @@ typedef struct {
 
 
 // Driver functions 
-void UART_initModule(EUSCI_A_Type *uart, const UART_config_t *config);
-void UART_enableModule(EUSCI_A_Type *uart);
-void UART_disableModule(EUSCI_A_Type *uart);
-void UART_enableInterrupts(EUSCI_A_Type *uart, uint8_t mask);
-void UART_disableInterrupts(EUSCI_A_Type *uart, uint8_t mask);
+void uart_initModule(EUSCI_A_Type *uart, const UART_config_t *config);
+void uart_enableModule(EUSCI_A_Type *uart);
+void uart_disableModule(EUSCI_A_Type *uart);
+void uart_enableInterrupts(EUSCI_A_Type *uart, uint8_t mask);
+void uart_disableInterrupts(EUSCI_A_Type *uart, uint8_t mask);
 
 
 #endif // UART_H 

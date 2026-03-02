@@ -5,7 +5,7 @@
 /// @brief HAL function for configuring EUSCI_Ax module for UART mode
 /// @param uart THe UART module to be configured (A0, A1, or A2)
 /// @param config A structure of type uart_config_t containing configuration parameters
-void UART_initModule(EUSCI_A_Type *uart, const UART_config_t *config) {
+void uart_initModule(EUSCI_A_Type *uart, const UART_config_t *config) {
 
     // Resets any previous UART configurations
     uart->CTLW0 = EUSCI_A_CTLW0_SWRST;
@@ -31,21 +31,21 @@ void UART_initModule(EUSCI_A_Type *uart, const UART_config_t *config) {
 
 /// @brief Enables the UART module by clearing the UCSWRST bit
 /// @param uart reference to UART module
-void UART_enableModule(EUSCI_A_Type *uart) {
+void uart_enableModule(EUSCI_A_Type *uart) {
     // Maybe check if UART is valid
     uart->CTLW0 &= ~EUSCI_A_CTLW0_SWRST;
 }
 
 /// @brief Disables the UART module by setting the UCSWRST bit
 /// @param uart reference to UART module
-void UART_disableModule(EUSCI_A_Type *uart) {
+void uart_disableModule(EUSCI_A_Type *uart) {
     uart->CTLW0 |= EUSCI_A_CTLW0_SWRST;
 }
 
 /// @brief Enables interrupt for selected UART module
 /// @param uart reference to UART module
 /// @param mask bit mask of interrupt types that should be enabled
-void UART_enableInterrupts(EUSCI_A_Type *uart, uint8_t mask) {
+void uart_enableInterrupts(EUSCI_A_Type *uart, uint8_t mask) {
 
     uint8_t locMask;
 
@@ -57,7 +57,7 @@ void UART_enableInterrupts(EUSCI_A_Type *uart, uint8_t mask) {
 
 /// @brief Disables interrupt for selected UART module
 /// @param uart
-void UART_disableInterrupts(EUSCI_A_Type *uart, uint8_t mask) {
+void uart_disableInterrupts(EUSCI_A_Type *uart, uint8_t mask) {
 
     uint8_t locMask;
 
