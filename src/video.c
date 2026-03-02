@@ -51,6 +51,28 @@ bool video_set_frame_buffer(video_handler_t* video, uint8_t* frame_buf, const un
 }
 
 
+// Attach delta buffer to video handle
+bool video_set_delta_buffer(video_handler_t* video, uint8_t* delta) {
+
+    if (video == NULL || delta == NULL) return false;
+ 
+    // Validate with internally stored width*height 
+    video->tmp_delta = delta;
+    return true;
+}
+
+
+// Attach tx buffer to video handle
+bool video_set_tx_buffer(video_handler_t* video, uint8_t* tx_buf, const unsigned long tx_len) { 
+
+    if (video == NULL || tx_buf == NULL || tx_len == 0) return false;
+ 
+    video->tx_line = tx_buf;
+    video->tx_line_pixels = tx_len;
+    return true;
+}
+
+
 void rle_decode_frame(video_handler_t* video) { 
 
     unsigned long pixels_decoded = 0;
@@ -115,13 +137,14 @@ bool video_prepare_tx_line(video_handler_t* video) {
     const unsigned long remaining = video->frame_pixels - video->frame_pos;
     const unsigned long n = (remaining < width) ? remaining : width; // skeptical about how this is worded, should clamp to <= width either way
 
-    for (size_t j = 0; j < n; j++) {
+    for (size_t j = 0; j < n; j++) { 
         const uint8_t idx = video->frame_buf[video->frame_pos + j];
-        video->tx_line[j] = pack_bgr565(video->palette[idx]);
+        uint16_t pixel = pack_bgr565(video->palette[idx]);
+        video->tx_line[2*j+0] = (uint8_t)(pixel >> 8);   // MSB first
+        video->tx_line[2*j+1] = (uint8_t)(pixel & 0xFF); // LSB
     }
 
     // Don't advance frame_pos yet, do after DMA completes
-
     return true;  
 }
 

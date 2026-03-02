@@ -1,5 +1,13 @@
 Archive member included to satisfy reference by file (symbol)
 
+/home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+                              build/LcdDriver/lcd_st7735.o (DMA_enableModule)
+/home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+                              /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o) (Interrupt_registerInterrupt)
+/home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+                              build/LcdDriver/lcd_st7735.o (SPI_getTransmitBufferAddressForDMA)
+/home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
+                              /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o) (CPU_cpsid)
 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
                               /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o (__libc_init_array)
 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
@@ -68,62 +76,26 @@ Discarded input sections
                 0x00000000     0x8000 build/src/main.o
  .rodata.orca_128x128_map
                 0x00000000     0x8000 build/src/main.o
- .bss.frame_buf
-                0x00000000     0x4000 build/src/main.o
+ .rodata.wolf_girl_map
+                0x00000000     0x8000 build/src/main.o
  .text.SystemCoreClockUpdate
                 0x00000000      0x314 build/src/system_msp432p401r.o
- .rodata.video_stream
-                0x00000000    0x331d3 build/src/video.o
- .text.video_init
-                0x00000000       0x8a build/src/video.o
- .text.video_set_output_buffer
-                0x00000000       0x5c build/src/video.o
- .text.rle_decode_frame
-                0x00000000       0xe2 build/src/video.o
- .text.delta_decode_frame
-                0x00000000       0x5a build/src/video.o
- .text.video_prepare_tx_line
-                0x00000000       0x94 build/src/video.o
- .text.pack_bgr565
-                0x00000000       0x4e build/src/video.o
- .text.parse_stream_header
-                0x00000000      0x116 build/src/video.o
- .text.parse_palette
-                0x00000000       0xb4 build/src/video.o
- .rodata.state_handlers
-                0x00000000       0x10 build/src/video_fsm.o
- .text.video_sm_init
-                0x00000000       0x20 build/src/video_fsm.o
- .text.video_sm_run
-                0x00000000       0x24 build/src/video_fsm.o
- .text.video_sm_transition
-                0x00000000       0x26 build/src/video_fsm.o
- .text.video_state_idle
-                0x00000000       0x2a build/src/video_fsm.o
- .text.video_state_parse_header
-                0x00000000       0x4a build/src/video_fsm.o
- .text.video_state_decode
-                0x00000000       0x24 build/src/video_fsm.o
- .text.video_state_transmit
-                0x00000000       0xb4 build/src/video_fsm.o
- .text.lcd_tx_pixels_dma
-                0x00000000       0x16 build/LcdDriver/lcd_st7735.o
- .text.lcd_ramwr
-                0x00000000        0xe build/LcdDriver/lcd_st7735.o
  .text.lcd_draw_pixel
                 0x00000000       0x7c build/LcdDriver/lcd_st7735.o
  .text.RGB565   0x00000000       0x5a build/LcdDriver/lcd_st7735.o
+ .text.lcd_draw_image
+                0x00000000       0xcc build/LcdDriver/lcd_st7735.o
  .text.gpio_init_input
                 0x00000000       0xd8 build/hal/msp432/gpio_msp432.o
  .text.gpio_read
                 0x00000000       0x5e build/hal/msp432/gpio_msp432.o
- .text.SPI_disableModule
+ .text.spi_disableModule
                 0x00000000       0x24 build/hal/msp432/spi_msp432.o
- .text.SPI_receiveByte
+ .text.spi_receiveByte
                 0x00000000       0x2c build/hal/msp432/spi_msp432.o
- .text.SPI_enableInterrupts
+ .text.spi_enableInterrupts
                 0x00000000       0x32 build/hal/msp432/spi_msp432.o
- .text.SPI_disableInterrupts
+ .text.spi_disableInterrupts
                 0x00000000       0x3c build/hal/msp432/spi_msp432.o
  .text.UART_disableModule
                 0x00000000       0x24 build/hal/msp432/uart_msp432.o
@@ -131,6 +103,196 @@ Discarded input sections
                 0x00000000       0x32 build/hal/msp432/uart_msp432.o
  .text.UART_disableInterrupts
                 0x00000000       0x3c build/hal/msp432/uart_msp432.o
+ .text.DMA_disableModule
+                0x00000000       0x40 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_getErrorStatus
+                0x00000000       0x18 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_clearErrorStatus
+                0x00000000       0x18 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_disableChannel
+                0x00000000       0x28 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_isChannelEnabled
+                0x00000000       0x34 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_getControlBase
+                0x00000000       0x18 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_getControlAlternateBase
+                0x00000000       0x18 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_requestChannel
+                0x00000000       0x28 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_enableChannelAttribute
+                0x00000000       0x74 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_disableChannelAttribute
+                0x00000000       0x74 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_getChannelAttribute
+                0x00000000       0x90 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_setChannelScatterGather
+                0x00000000       0x94 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_getChannelSize
+                0x00000000       0x48 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_getChannelMode
+                0x00000000       0x54 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_requestSoftwareTransfer
+                0x00000000       0x2c /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_getInterruptStatus
+                0x00000000       0x18 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_disableInterrupt
+                0x00000000       0x60 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_registerInterrupt
+                0x00000000       0x20 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text.DMA_unregisterInterrupt
+                0x00000000       0x1c /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .rodata.g_pulPriority
+                0x00000000       0x20 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .rodata.g_pulRegs
+                0x00000000       0x50 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .rodata.g_pulDisRegs
+                0x00000000        0x8 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .rodata.g_pulPendRegs
+                0x00000000        0x8 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .rodata.g_pulUnpendRegs
+                0x00000000        0x8 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.IntDefaultHandler
+                0x00000000        0x6 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ vtable         0x00000000       0xe8 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_enableMaster
+                0x00000000       0x18 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_disableMaster
+                0x00000000       0x18 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_registerInterrupt
+                0x00000000       0x64 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_unregisterInterrupt
+                0x00000000       0x28 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_setPriorityGrouping
+                0x00000000       0x50 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_getPriorityGrouping
+                0x00000000       0x4c /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_setPriority
+                0x00000000       0x68 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_getPriority
+                0x00000000       0x34 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_disableInterrupt
+                0x00000000       0x94 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_isEnabled
+                0x00000000       0xa0 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_pendInterrupt
+                0x00000000       0x7c /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_unpendInterrupt
+                0x00000000       0x68 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_setPriorityMask
+                0x00000000       0x1a /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_getPriorityMask
+                0x00000000       0x10 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_setVectorTableAddress
+                0x00000000       0x20 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_getVectorTableAddress
+                0x00000000       0x18 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_enableSleepOnIsrExit
+                0x00000000       0x20 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.Interrupt_disableSleepOnIsrExit
+                0x00000000       0x20 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text.SPI_initMaster
+                0x00000000       0xf6 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_selectFourPinFunctionality
+                0x00000000       0x38 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_changeMasterClock
+                0x00000000       0x36 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_initSlave
+                0x00000000       0xb8 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_changeClockPhasePolarity
+                0x00000000       0x42 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_transmitData
+                0x00000000       0x38 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_receiveData
+                0x00000000       0x2e /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_enableModule
+                0x00000000       0x2a /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_disableModule
+                0x00000000       0x2a /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_getReceiveBufferAddressForDMA
+                0x00000000       0x2e /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_isBusy
+                0x00000000       0x2e /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_enableInterrupt
+                0x00000000       0x38 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_disableInterrupt
+                0x00000000       0x38 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_getInterruptStatus
+                0x00000000       0x3e /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_getEnabledInterruptStatus
+                0x00000000       0x42 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_clearInterruptFlag
+                0x00000000       0x38 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_registerInterrupt
+                0x00000000       0xf8 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_unregisterInterrupt
+                0x00000000       0xe4 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_B_SPI_select4PinFunctionality
+                0x00000000       0x34 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_B_SPI_masterChangeClock
+                0x00000000       0x3e /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_B_SPI_slaveInit
+                0x00000000       0x68 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_B_SPI_changeClockPhasePolarity
+                0x00000000       0x56 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_B_SPI_transmitData
+                0x00000000       0x20 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_B_SPI_receiveData
+                0x00000000       0x1c /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_B_SPI_enableInterrupt
+                0x00000000       0x28 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_B_SPI_disableInterrupt
+                0x00000000       0x32 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_B_SPI_getInterruptStatus
+                0x00000000       0x26 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_B_SPI_clearInterruptFlag
+                0x00000000       0x32 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_B_SPI_enable
+                0x00000000       0x20 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_B_SPI_disable
+                0x00000000       0x20 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_B_SPI_getReceiveBufferAddressForDMA
+                0x00000000       0x18 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_B_SPI_isBusy
+                0x00000000       0x2c /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_A_SPI_select4PinFunctionality
+                0x00000000       0x34 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_A_SPI_masterChangeClock
+                0x00000000       0x3e /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_A_SPI_slaveInit
+                0x00000000       0x68 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_A_SPI_changeClockPhasePolarity
+                0x00000000       0x56 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_A_SPI_transmitData
+                0x00000000       0x20 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_A_SPI_receiveData
+                0x00000000       0x1c /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_A_SPI_enableInterrupt
+                0x00000000       0x28 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_A_SPI_disableInterrupt
+                0x00000000       0x32 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_A_SPI_getInterruptStatus
+                0x00000000       0x26 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_A_SPI_clearInterruptFlag
+                0x00000000       0x32 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_A_SPI_enable
+                0x00000000       0x20 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_A_SPI_disable
+                0x00000000       0x20 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_A_SPI_getReceiveBufferAddressForDMA
+                0x00000000       0x18 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.EUSCI_A_SPI_isBusy
+                0x00000000       0x2c /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.CPU_cpsid
+                0x00000000        0xe /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
+ .text.CPU_primask
+                0x00000000        0xc /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
+ .text.CPU_cpsie
+                0x00000000        0xe /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
+ .text.CPU_wfi  0x00000000        0x6 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
+ .text.CPU_basepriSet
+                0x00000000        0x8 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
+ .text.CPU_basepriGet
+                0x00000000        0xc /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
  .gnu.warning._close
                 0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
  .gnu.warning._lseek
@@ -190,7 +352,7 @@ LOAD build/hal/msp432/wdt_msp432.o
 .vtable
  *(.vtable)
 
-.text           0x000000e4     0x1820
+.text           0x000000e4     0x26a4
  CREATE_OBJECT_SYMBOLS
  *(.text)
  .text          0x000000e4        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
@@ -210,6 +372,10 @@ LOAD build/hal/msp432/wdt_msp432.o
  .text          0x000001dc        0x0 build/hal/msp432/spi_msp432.o
  .text          0x000001dc        0x0 build/hal/msp432/uart_msp432.o
  .text          0x000001dc        0x0 build/hal/msp432/wdt_msp432.o
+ .text          0x000001dc        0x0 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .text          0x000001dc        0x0 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .text          0x000001dc        0x0 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text          0x000001dc        0x0 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
  .text          0x000001dc       0x50 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
                 0x000001dc                __libc_init_array
  .text          0x0000022c       0xa4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
@@ -280,200 +446,307 @@ LOAD build/hal/msp432/wdt_msp432.o
  *(.text.*)
  .text.__NVIC_EnableIRQ
                 0x00000d48       0x3c build/src/main.o
- .text.main     0x00000d84       0x98 build/src/main.o
+ .text.main     0x00000d84       0xdc build/src/main.o
                 0x00000d84                main
  .text.WDT_A_IRQHandler
-                0x00000e1c       0x14 build/src/main.o
-                0x00000e1c                WDT_A_IRQHandler
+                0x00000e60       0x14 build/src/main.o
+                0x00000e60                WDT_A_IRQHandler
  .text.SystemInit
-                0x00000e30       0x80 build/src/system_msp432p401r.o
-                0x00000e30                SystemInit
+                0x00000e74       0x80 build/src/system_msp432p401r.o
+                0x00000e74                SystemInit
+ .text.video_init
+                0x00000ef4       0x8a build/src/video.o
+                0x00000ef4                video_init
+ .text.video_set_frame_buffer
+                0x00000f7e       0x5c build/src/video.o
+                0x00000f7e                video_set_frame_buffer
+ .text.video_set_delta_buffer
+                0x00000fda       0x30 build/src/video.o
+                0x00000fda                video_set_delta_buffer
+ .text.video_set_tx_buffer
+                0x0000100a       0x40 build/src/video.o
+                0x0000100a                video_set_tx_buffer
+ .text.rle_decode_frame
+                0x0000104a       0xe2 build/src/video.o
+                0x0000104a                rle_decode_frame
+ .text.delta_decode_frame
+                0x0000112c       0x5a build/src/video.o
+                0x0000112c                delta_decode_frame
+ .text.video_prepare_tx_line
+                0x00001186       0xb2 build/src/video.o
+                0x00001186                video_prepare_tx_line
+ .text.pack_bgr565
+                0x00001238       0x4e build/src/video.o
+                0x00001238                pack_bgr565
+ .text.parse_stream_header
+                0x00001286      0x116 build/src/video.o
+                0x00001286                parse_stream_header
+ .text.parse_palette
+                0x0000139c       0xb4 build/src/video.o
+                0x0000139c                parse_palette
+ .text.video_sm_init
+                0x00001450       0x20 build/src/video_fsm.o
+                0x00001450                video_sm_init
+ .text.video_sm_run
+                0x00001470       0x24 build/src/video_fsm.o
+                0x00001470                video_sm_run
+ .text.video_sm_transition
+                0x00001494       0x26 build/src/video_fsm.o
+                0x00001494                video_sm_transition
+ .text.video_state_idle
+                0x000014ba       0x32 build/src/video_fsm.o
+                0x000014ba                video_state_idle
+ .text.video_state_parse_header
+                0x000014ec       0x4a build/src/video_fsm.o
+                0x000014ec                video_state_parse_header
+ .text.video_state_decode
+                0x00001536       0x3c build/src/video_fsm.o
+                0x00001536                video_state_decode
+ *fill*         0x00001572        0x2 
+ .text.video_state_transmit
+                0x00001574       0xb0 build/src/video_fsm.o
+                0x00001574                video_state_transmit
  .text.Reset_Handler
-                0x00000eb0       0x44 build/gcc/startup_msp432p401r_gcc.o
-                0x00000eb0                Reset_Handler
+                0x00001624       0x44 build/gcc/startup_msp432p401r_gcc.o
+                0x00001624                Reset_Handler
  .text.Default_Handler
-                0x00000ef4        0x8 build/gcc/startup_msp432p401r_gcc.o
-                0x00000ef4                CS_IRQHandler
-                0x00000ef4                DebugMon_Handler
-                0x00000ef4                AES256_IRQHandler
-                0x00000ef4                HardFault_Handler
-                0x00000ef4                SysTick_Handler
-                0x00000ef4                PendSV_Handler
-                0x00000ef4                NMI_Handler
-                0x00000ef4                RTC_C_IRQHandler
-                0x00000ef4                PORT1_IRQHandler
-                0x00000ef4                FPU_IRQHandler
-                0x00000ef4                PORT2_IRQHandler
-                0x00000ef4                TA3_0_IRQHandler
-                0x00000ef4                UsageFault_Handler
-                0x00000ef4                DMA_INT3_IRQHandler
-                0x00000ef4                TA2_0_IRQHandler
-                0x00000ef4                DMA_INT1_IRQHandler
-                0x00000ef4                TA2_N_IRQHandler
-                0x00000ef4                TA1_0_IRQHandler
-                0x00000ef4                PSS_IRQHandler
-                0x00000ef4                DMA_INT2_IRQHandler
-                0x00000ef4                EUSCIA3_IRQHandler
-                0x00000ef4                DMA_INT0_IRQHandler
-                0x00000ef4                PORT4_IRQHandler
-                0x00000ef4                PORT5_IRQHandler
-                0x00000ef4                EUSCIB0_IRQHandler
-                0x00000ef4                Default_Handler
-                0x00000ef4                T32_INTC_IRQHandler
-                0x00000ef4                TA3_N_IRQHandler
-                0x00000ef4                TA0_0_IRQHandler
-                0x00000ef4                EUSCIA2_IRQHandler
-                0x00000ef4                PORT6_IRQHandler
-                0x00000ef4                PORT3_IRQHandler
-                0x00000ef4                MemManage_Handler
-                0x00000ef4                SVC_Handler
-                0x00000ef4                TA1_N_IRQHandler
-                0x00000ef4                EUSCIA1_IRQHandler
-                0x00000ef4                COMP_E1_IRQHandler
-                0x00000ef4                EUSCIB2_IRQHandler
-                0x00000ef4                FLCTL_IRQHandler
-                0x00000ef4                EUSCIB3_IRQHandler
-                0x00000ef4                T32_INT1_IRQHandler
-                0x00000ef4                DMA_ERR_IRQHandler
-                0x00000ef4                ADC14_IRQHandler
-                0x00000ef4                EUSCIA0_IRQHandler
-                0x00000ef4                BusFault_Handler
-                0x00000ef4                PCM_IRQHandler
-                0x00000ef4                TA0_N_IRQHandler
-                0x00000ef4                COMP_E0_IRQHandler
-                0x00000ef4                EUSCIB1_IRQHandler
-                0x00000ef4                T32_INT2_IRQHandler
+                0x00001668        0x8 build/gcc/startup_msp432p401r_gcc.o
+                0x00001668                CS_IRQHandler
+                0x00001668                DebugMon_Handler
+                0x00001668                AES256_IRQHandler
+                0x00001668                HardFault_Handler
+                0x00001668                SysTick_Handler
+                0x00001668                PendSV_Handler
+                0x00001668                NMI_Handler
+                0x00001668                RTC_C_IRQHandler
+                0x00001668                PORT1_IRQHandler
+                0x00001668                FPU_IRQHandler
+                0x00001668                PORT2_IRQHandler
+                0x00001668                TA3_0_IRQHandler
+                0x00001668                UsageFault_Handler
+                0x00001668                DMA_INT3_IRQHandler
+                0x00001668                TA2_0_IRQHandler
+                0x00001668                TA2_N_IRQHandler
+                0x00001668                TA1_0_IRQHandler
+                0x00001668                PSS_IRQHandler
+                0x00001668                DMA_INT2_IRQHandler
+                0x00001668                EUSCIA3_IRQHandler
+                0x00001668                DMA_INT0_IRQHandler
+                0x00001668                PORT4_IRQHandler
+                0x00001668                PORT5_IRQHandler
+                0x00001668                EUSCIB0_IRQHandler
+                0x00001668                Default_Handler
+                0x00001668                T32_INTC_IRQHandler
+                0x00001668                TA3_N_IRQHandler
+                0x00001668                TA0_0_IRQHandler
+                0x00001668                EUSCIA2_IRQHandler
+                0x00001668                PORT6_IRQHandler
+                0x00001668                PORT3_IRQHandler
+                0x00001668                MemManage_Handler
+                0x00001668                SVC_Handler
+                0x00001668                TA1_N_IRQHandler
+                0x00001668                EUSCIA1_IRQHandler
+                0x00001668                COMP_E1_IRQHandler
+                0x00001668                EUSCIB2_IRQHandler
+                0x00001668                FLCTL_IRQHandler
+                0x00001668                EUSCIB3_IRQHandler
+                0x00001668                T32_INT1_IRQHandler
+                0x00001668                DMA_ERR_IRQHandler
+                0x00001668                ADC14_IRQHandler
+                0x00001668                EUSCIA0_IRQHandler
+                0x00001668                BusFault_Handler
+                0x00001668                PCM_IRQHandler
+                0x00001668                TA0_N_IRQHandler
+                0x00001668                COMP_E0_IRQHandler
+                0x00001668                EUSCIB1_IRQHandler
+                0x00001668                T32_INT2_IRQHandler
  .text.HAL_LCD_PORT_init
-                0x00000efc       0x6c build/LcdDriver/hal_lcd_msp432.o
-                0x00000efc                HAL_LCD_PORT_init
+                0x00001670       0x6c build/LcdDriver/hal_lcd_msp432.o
+                0x00001670                HAL_LCD_PORT_init
  .text.HAL_LCD_SPI_init
-                0x00000f68       0x38 build/LcdDriver/hal_lcd_msp432.o
-                0x00000f68                HAL_LCD_SPI_init
+                0x000016dc       0x38 build/LcdDriver/hal_lcd_msp432.o
+                0x000016dc                HAL_LCD_SPI_init
  .text.HAL_LCD_write_command
-                0x00000fa0       0x38 build/LcdDriver/hal_lcd_msp432.o
-                0x00000fa0                HAL_LCD_write_command
+                0x00001714       0x38 build/LcdDriver/hal_lcd_msp432.o
+                0x00001714                HAL_LCD_write_command
  .text.HAL_LCD_write_data
-                0x00000fd8       0x38 build/LcdDriver/hal_lcd_msp432.o
-                0x00000fd8                HAL_LCD_write_data
+                0x0000174c       0x38 build/LcdDriver/hal_lcd_msp432.o
+                0x0000174c                HAL_LCD_write_data
  .text.HAL_LCD_delay
-                0x00001010       0x24 build/LcdDriver/hal_lcd_msp432.o
-                0x00001010                HAL_LCD_delay
+                0x00001784       0x24 build/LcdDriver/hal_lcd_msp432.o
+                0x00001784                HAL_LCD_delay
  .text.lcd_init
-                0x00001034       0xf8 build/LcdDriver/lcd_st7735.o
-                0x00001034                lcd_init
+                0x000017a8       0xf8 build/LcdDriver/lcd_st7735.o
+                0x000017a8                lcd_init
  .text.lcd_set_window
-                0x0000112c       0xd0 build/LcdDriver/lcd_st7735.o
-                0x0000112c                lcd_set_window
+                0x000018a0       0xd0 build/LcdDriver/lcd_st7735.o
+                0x000018a0                lcd_set_window
+ .text.lcd_dma_init
+                0x00001970       0x44 build/LcdDriver/lcd_st7735.o
+                0x00001970                lcd_dma_init
+ .text.lcd_tx_pixels_dma
+                0x000019b4       0x5c build/LcdDriver/lcd_st7735.o
+                0x000019b4                lcd_tx_pixels_dma
+ .text.lcd_ramwr
+                0x00001a10       0x28 build/LcdDriver/lcd_st7735.o
+                0x00001a10                lcd_ramwr
  .text.lcd_clear_screen
-                0x000011fc       0x48 build/LcdDriver/lcd_st7735.o
-                0x000011fc                lcd_clear_screen
- .text.lcd_draw_image
-                0x00001244       0xcc build/LcdDriver/lcd_st7735.o
-                0x00001244                lcd_draw_image
+                0x00001a38       0x48 build/LcdDriver/lcd_st7735.o
+                0x00001a38                lcd_clear_screen
+ .text.DMA_INT1_IRQHandler
+                0x00001a80       0x38 build/LcdDriver/lcd_st7735.o
+                0x00001a80                DMA_INT1_IRQHandler
  .text.gpio_init_output
-                0x00001310       0x9a build/hal/msp432/gpio_msp432.o
-                0x00001310                gpio_init_output
+                0x00001ab8       0x9a build/hal/msp432/gpio_msp432.o
+                0x00001ab8                gpio_init_output
  .text.gpio_write
-                0x000013aa       0x9a build/hal/msp432/gpio_msp432.o
-                0x000013aa                gpio_write
+                0x00001b52       0x9a build/hal/msp432/gpio_msp432.o
+                0x00001b52                gpio_write
  .text.gpio_toggle
-                0x00001444       0x56 build/hal/msp432/gpio_msp432.o
-                0x00001444                gpio_toggle
+                0x00001bec       0x56 build/hal/msp432/gpio_msp432.o
+                0x00001bec                gpio_toggle
  .text.gpio_port_is_odd
-                0x0000149a       0x2c build/hal/msp432/gpio_msp432.o
- *fill*         0x000014c6        0x2 
+                0x00001c42       0x2c build/hal/msp432/gpio_msp432.o
+ *fill*         0x00001c6e        0x2 
  .text.gpio_set_function
-                0x000014c8      0x1ec build/hal/msp432/gpio_msp432.o
-                0x000014c8                gpio_set_function
- .text.SPI_initModule
-                0x000016b4       0x88 build/hal/msp432/spi_msp432.o
-                0x000016b4                SPI_initModule
- .text.SPI_enableModule
-                0x0000173c       0x24 build/hal/msp432/spi_msp432.o
-                0x0000173c                SPI_enableModule
- .text.SPI_sendByte
-                0x00001760       0x30 build/hal/msp432/spi_msp432.o
-                0x00001760                SPI_sendByte
+                0x00001c70      0x1ec build/hal/msp432/gpio_msp432.o
+                0x00001c70                gpio_set_function
+ .text.spi_initModule
+                0x00001e5c       0x88 build/hal/msp432/spi_msp432.o
+                0x00001e5c                spi_initModule
+ .text.spi_enableModule
+                0x00001ee4       0x24 build/hal/msp432/spi_msp432.o
+                0x00001ee4                spi_enableModule
+ .text.spi_sendByte
+                0x00001f08       0x30 build/hal/msp432/spi_msp432.o
+                0x00001f08                spi_sendByte
  .text.UART_initModule
-                0x00001790       0xaa build/hal/msp432/uart_msp432.o
-                0x00001790                UART_initModule
+                0x00001f38       0xaa build/hal/msp432/uart_msp432.o
+                0x00001f38                UART_initModule
  .text.UART_enableModule
-                0x0000183a       0x24 build/hal/msp432/uart_msp432.o
-                0x0000183a                UART_enableModule
+                0x00001fe2       0x24 build/hal/msp432/uart_msp432.o
+                0x00001fe2                UART_enableModule
  .text.WDT_init
-                0x0000185e       0x62 build/hal/msp432/wdt_msp432.o
-                0x0000185e                WDT_init
+                0x00002006       0x62 build/hal/msp432/wdt_msp432.o
+                0x00002006                WDT_init
  .text.WDT_hold
-                0x000018c0       0x22 build/hal/msp432/wdt_msp432.o
-                0x000018c0                WDT_hold
-                0x000018e4                        . = ALIGN (0x4)
- *fill*         0x000018e2        0x2 
+                0x00002068       0x22 build/hal/msp432/wdt_msp432.o
+                0x00002068                WDT_hold
+ *fill*         0x0000208a        0x2 
+ .text.DMA_enableModule
+                0x0000208c       0x18 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+                0x0000208c                DMA_enableModule
+ .text.DMA_enableChannel
+                0x000020a4       0x28 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+                0x000020a4                DMA_enableChannel
+ .text.DMA_setControlBase
+                0x000020cc       0x20 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+                0x000020cc                DMA_setControlBase
+ .text.DMA_setChannelControl
+                0x000020ec       0x48 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+                0x000020ec                DMA_setChannelControl
+ .text.DMA_setChannelTransfer
+                0x00002134      0x104 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+                0x00002134                DMA_setChannelTransfer
+ .text.DMA_assignChannel
+                0x00002238      0x2f0 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+                0x00002238                DMA_assignChannel
+ .text.DMA_assignInterrupt
+                0x00002528       0x70 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+                0x00002528                DMA_assignInterrupt
+ .text.DMA_clearInterruptFlag
+                0x00002598       0x30 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+                0x00002598                DMA_clearInterruptFlag
+ .text.DMA_enableInterrupt
+                0x000025c8       0x60 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+                0x000025c8                DMA_enableInterrupt
+ .text.Interrupt_enableInterrupt
+                0x00002628       0x94 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+                0x00002628                Interrupt_enableInterrupt
+ .text.is_A_Module
+                0x000026bc       0x4c /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .text.SPI_getTransmitBufferAddressForDMA
+                0x00002708       0x2e /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+                0x00002708                SPI_getTransmitBufferAddressForDMA
+ .text.EUSCI_B_SPI_getTransmitBufferAddressForDMA
+                0x00002736       0x18 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+                0x00002736                EUSCI_B_SPI_getTransmitBufferAddressForDMA
+ .text.EUSCI_A_SPI_getTransmitBufferAddressForDMA
+                0x0000274e       0x18 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+                0x0000274e                EUSCI_A_SPI_getTransmitBufferAddressForDMA
+                0x00002768                        . = ALIGN (0x4)
+ *fill*         0x00002766        0x2 
  *(.ctors)
-                0x000018e4                        . = ALIGN (0x4)
+                0x00002768                        . = ALIGN (0x4)
  *(.dtors)
-                0x000018e4                        . = ALIGN (0x4)
-                0x000018e4                        __init_array_start = .
+                0x00002768                        . = ALIGN (0x4)
+                0x00002768                        __init_array_start = .
  *(.init_array*)
- .init_array    0x000018e4        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x000018e8                        __init_array_end = .
+ .init_array    0x00002768        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0000276c                        __init_array_end = .
  *(.init)
- .init          0x000018e8        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
-                0x000018e8                _init
- .init          0x000018ec        0x8 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x0000276c        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
+                0x0000276c                _init
+ .init          0x00002770        0x8 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini*)
- .fini          0x000018f4        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
-                0x000018f4                _fini
- .fini_array    0x000018f8        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
- .fini          0x000018fc        0x8 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
+ .fini          0x00002778        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
+                0x00002778                _fini
+ .fini_array    0x0000277c        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini          0x00002780        0x8 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
 
-.glue_7         0x00001904        0x0
- .glue_7        0x00001904        0x0 linker stubs
+.glue_7         0x00002788        0x0
+ .glue_7        0x00002788        0x0 linker stubs
 
-.glue_7t        0x00001904        0x0
- .glue_7t       0x00001904        0x0 linker stubs
+.glue_7t        0x00002788        0x0
+ .glue_7t       0x00002788        0x0 linker stubs
 
-.vfp11_veneer   0x00001904        0x0
- .vfp11_veneer  0x00001904        0x0 linker stubs
+.vfp11_veneer   0x00002788        0x0
+ .vfp11_veneer  0x00002788        0x0 linker stubs
 
-.v4_bx          0x00001904        0x0
- .v4_bx         0x00001904        0x0 linker stubs
+.v4_bx          0x00002788        0x0
+ .v4_bx         0x00002788        0x0 linker stubs
 
-.iplt           0x00001904        0x0
- .iplt          0x00001904        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x00002788        0x0
+ .iplt          0x00002788        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x00001904     0x8028
+.rodata         0x00002788    0x33214
  *(.rodata)
  *(.rodata.*)
- .rodata.wolf_girl_map
-                0x00001904     0x8000 build/src/main.o
-                0x00001904                wolf_girl_map
  .rodata.UART_A0_config
-                0x00009904       0x18 build/src/main.o
+                0x00002788       0x18 build/src/main.o
  .rodata.wdt_config_interval_timer_1s
-                0x0000991c        0x4 build/src/main.o
+                0x000027a0        0x4 build/src/main.o
+ .rodata.video_stream
+                0x000027a4    0x331d3 build/src/video.o
+                0x000027a4                video_stream
+ *fill*         0x00035977        0x1 
+ .rodata.state_handlers
+                0x00035978       0x10 build/src/video_fsm.o
  .rodata.spi_config
-                0x00009920        0xc build/LcdDriver/hal_lcd_msp432.o
+                0x00035988        0xc build/LcdDriver/hal_lcd_msp432.o
+ .rodata.g_pulEnRegs
+                0x00035994        0x8 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
 
-.eh_frame       0x0000992c        0x0
- .eh_frame      0x0000992c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.eh_frame       0x0003599c        0x0
+ .eh_frame      0x0003599c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.ARM.exidx      0x0000992c        0x8
-                0x0000992c                        __exidx_start = .
+.ARM.exidx      0x0003599c        0x8
+                0x0003599c                        __exidx_start = .
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x0000992c        0x8 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+ .ARM.exidx     0x0003599c        0x8 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
                                  0x10 (size before relaxing)
-                0x00009934                        __exidx_end = .
+                0x000359a4                        __exidx_end = .
 
-.ARM.extab      0x00009934        0x0
+.ARM.extab      0x000359a4        0x0
  *(.ARM.extab* .gnu.linkonce.armextab.*)
- .ARM.extab     0x00009934        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
-                0x00009934                        __etext = .
+ .ARM.extab     0x000359a4        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+                0x000359a4                        __etext = .
 
-.rel.dyn        0x00009934        0x0
- .rel.iplt      0x00009934        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x000359a4        0x0
+ .rel.iplt      0x000359a4        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000       0x6c load address 0x00009934
-                0x00009934                        __data_load__ = LOADADDR (.data)
+.data           0x20000000       0x70 load address 0x000359a4
+                0x000359a4                        __data_load__ = LOADADDR (.data)
                 0x20000000                        __data_start__ = .
  *(.data)
  .data          0x20000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
@@ -491,6 +764,10 @@ LOAD build/hal/msp432/wdt_msp432.o
  .data          0x20000004        0x0 build/hal/msp432/spi_msp432.o
  .data          0x20000004        0x0 build/hal/msp432/uart_msp432.o
  .data          0x20000004        0x0 build/hal/msp432/wdt_msp432.o
+ .data          0x20000004        0x0 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .data          0x20000004        0x0 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .data          0x20000004        0x0 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .data          0x20000004        0x0 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
  .data          0x20000004        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
  .data          0x20000004        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
  .data          0x20000004        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
@@ -525,111 +802,128 @@ LOAD build/hal/msp432/wdt_msp432.o
  .data          0x20000064        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtend.o
  .data          0x20000064        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
  *(.data*)
+ .data.video_ctx
+                0x20000064        0x4 build/src/main.o
+                0x20000064                video_ctx
  .data.SystemCoreClock
-                0x20000064        0x4 build/src/system_msp432p401r.o
-                0x20000064                SystemCoreClock
+                0x20000068        0x4 build/src/system_msp432p401r.o
+                0x20000068                SystemCoreClock
  .data.video_len
-                0x20000068        0x4 build/src/video.o
-                0x20000068                video_len
-                0x2000006c                        . = ALIGN (0x4)
-                0x2000006c                        __data_end__ = .
+                0x2000006c        0x4 build/src/video.o
+                0x2000006c                video_len
+                0x20000070                        . = ALIGN (0x4)
+                0x20000070                        __data_end__ = .
 
 .tm_clone_table
-                0x2000006c        0x0 load address 0x000099a0
+                0x20000070        0x0 load address 0x00035a14
  .tm_clone_table
-                0x2000006c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x20000070        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  .tm_clone_table
-                0x2000006c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtend.o
+                0x20000070        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtend.o
 
-.igot.plt       0x2000006c        0x0 load address 0x000099a0
- .igot.plt      0x2000006c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.igot.plt       0x20000070        0x0 load address 0x00035a14
+ .igot.plt      0x20000070        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.bss            0x2000006c      0x248
-                0x2000006c                        __bss_start__ = .
+.bss            0x20000400     0x7200
+                0x20000400                        __bss_start__ = .
  *(.shbss)
  *(.bss)
- .bss           0x2000006c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
- .bss           0x2000006c       0x1c /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
- .bss           0x20000088        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
- .bss           0x20000088        0x0 build/src/main.o
- .bss           0x20000088        0x0 build/src/system_msp432p401r.o
- .bss           0x20000088        0x0 build/src/video.o
- .bss           0x20000088        0x0 build/src/video_fsm.o
- .bss           0x20000088        0x0 build/gcc/startup_msp432p401r_gcc.o
- .bss           0x20000088        0x0 build/LcdDriver/hal_lcd_msp432.o
- .bss           0x20000088        0x0 build/LcdDriver/lcd_st7735.o
- .bss           0x20000088        0x0 build/hal/msp432/gpio_msp432.o
- .bss           0x20000088        0x0 build/hal/msp432/spi_msp432.o
- .bss           0x20000088        0x0 build/hal/msp432/uart_msp432.o
- .bss           0x20000088        0x0 build/hal/msp432/wdt_msp432.o
- .bss           0x20000088        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
- .bss           0x20000088        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
- .bss           0x20000088        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
- .bss           0x20000088        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
- .bss           0x20000088        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
- .bss           0x20000088      0x13c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
-                0x20000088                __sf
-                0x200001c0                __stdio_exit_handler
- .bss           0x200001c4        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
- .bss           0x200001c4        0x8 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
-                0x200001c4                __malloc_sbrk_start
-                0x200001c8                __malloc_free_list
- .bss           0x200001cc        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
- .bss           0x200001cc        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
- .bss           0x200001cc       0x8c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
-                0x200001cc                __atexit0
- .bss           0x20000258        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
- .bss           0x20000258        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
- .bss           0x20000258        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
- .bss           0x20000258        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
- .bss           0x20000258        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
- .bss           0x20000258        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
-                0x20000258                __atexit
- .bss           0x2000025c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
- .bss           0x2000025c        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
-                0x2000025c                errno
- .bss           0x20000260        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
- .bss           0x20000260        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
- .bss           0x20000260        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
- .bss           0x20000260        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
- .bss           0x20000260        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
- .bss           0x20000260        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
- .bss           0x20000264        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
- .bss           0x20000264        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
- .bss           0x20000264        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtend.o
- .bss           0x20000264        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
+ .bss           0x20000400        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
+ .bss           0x20000400       0x1c /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .bss           0x2000041c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+ .bss           0x2000041c        0x0 build/src/main.o
+ .bss           0x2000041c        0x0 build/src/system_msp432p401r.o
+ .bss           0x2000041c        0x0 build/src/video.o
+ .bss           0x2000041c        0x0 build/src/video_fsm.o
+ .bss           0x2000041c        0x0 build/gcc/startup_msp432p401r_gcc.o
+ .bss           0x2000041c        0x0 build/LcdDriver/hal_lcd_msp432.o
+ .bss           0x2000041c        0x0 build/LcdDriver/lcd_st7735.o
+ .bss           0x2000041c        0x0 build/hal/msp432/gpio_msp432.o
+ .bss           0x2000041c        0x0 build/hal/msp432/spi_msp432.o
+ .bss           0x2000041c        0x0 build/hal/msp432/uart_msp432.o
+ .bss           0x2000041c        0x0 build/hal/msp432/wdt_msp432.o
+ .bss           0x2000041c        0x0 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .bss           0x2000041c        0x0 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .bss           0x2000041c        0x0 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .bss           0x2000041c        0x0 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
+ .bss           0x2000041c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+ .bss           0x2000041c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+ .bss           0x2000041c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
+ .bss           0x2000041c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
+ .bss           0x2000041c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
+ .bss           0x2000041c      0x13c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x2000041c                __sf
+                0x20000554                __stdio_exit_handler
+ .bss           0x20000558        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
+ .bss           0x20000558        0x8 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+                0x20000558                __malloc_sbrk_start
+                0x2000055c                __malloc_free_list
+ .bss           0x20000560        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
+ .bss           0x20000560        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
+ .bss           0x20000560       0x8c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
+                0x20000560                __atexit0
+ .bss           0x200005ec        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+ .bss           0x200005ec        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
+ .bss           0x200005ec        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+ .bss           0x200005ec        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+ .bss           0x200005ec        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
+ .bss           0x200005ec        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
+                0x200005ec                __atexit
+ .bss           0x200005f0        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
+ .bss           0x200005f0        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
+                0x200005f0                errno
+ .bss           0x200005f4        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
+ .bss           0x200005f4        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
+ .bss           0x200005f4        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
+ .bss           0x200005f4        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
+ .bss           0x200005f4        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
+ .bss           0x200005f4        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
+ .bss           0x200005f8        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
+ .bss           0x200005f8        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+ .bss           0x200005f8        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtend.o
+ .bss           0x200005f8        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
  *(.bss.*)
- .bss.wdt_a     0x20000264        0x8 build/src/main.o
-                0x20000264                wdt_a
- .bss.led1      0x2000026c        0xc build/src/main.o
-                0x2000026c                led1
- .bss.lcd_dc    0x20000278        0xc build/LcdDriver/hal_lcd_msp432.o
-                0x20000278                lcd_dc
- .bss.lcd_cs    0x20000284        0xc build/LcdDriver/hal_lcd_msp432.o
-                0x20000284                lcd_cs
+ .bss.wdt_a     0x200005f8        0x8 build/src/main.o
+                0x200005f8                wdt_a
+ .bss.led1      0x20000600        0xc build/src/main.o
+                0x20000600                led1
+ .bss.video     0x2000060c      0x434 build/src/main.o
+                0x2000060c                video
+ .bss.frame_buf
+                0x20000a40     0x3378 build/src/main.o
+ .bss.tmp_delta
+                0x20003db8     0x3378 build/src/main.o
+ .bss.tx_buf    0x20007130       0xd8 build/src/main.o
+ .bss.lcd_dc    0x20007208        0xc build/LcdDriver/hal_lcd_msp432.o
+                0x20007208                lcd_dc
+ .bss.lcd_cs    0x20007214        0xc build/LcdDriver/hal_lcd_msp432.o
+                0x20007214                lcd_cs
  .bss.lcd_spi_mosi
-                0x20000290        0xc build/LcdDriver/hal_lcd_msp432.o
-                0x20000290                lcd_spi_mosi
+                0x20007220        0xc build/LcdDriver/hal_lcd_msp432.o
+                0x20007220                lcd_spi_mosi
  .bss.lcd_spi_clk
-                0x2000029c        0xc build/LcdDriver/hal_lcd_msp432.o
-                0x2000029c                lcd_spi_clk
- .bss.lcd_rst   0x200002a8        0xc build/LcdDriver/hal_lcd_msp432.o
-                0x200002a8                lcd_rst
+                0x2000722c        0xc build/LcdDriver/hal_lcd_msp432.o
+                0x2000722c                lcd_spi_clk
+ .bss.lcd_rst   0x20007238        0xc build/LcdDriver/hal_lcd_msp432.o
+                0x20007238                lcd_rst
+ *fill*         0x20007244      0x1bc 
+ .bss.MSP_EXP432P401RLP_DMAControlTable
+                0x20007400      0x200 build/LcdDriver/lcd_st7735.o
  *(COMMON)
-                0x200002b4                        . = ALIGN (0x4)
-                0x200002b4                        __bss_end__ = .
+                0x20007600                        . = ALIGN (0x4)
+                0x20007600                        __bss_end__ = .
 
-.heap           0x200002b4        0x0
-                0x200002b4                        __heap_start__ = .
-                0x200002b4                        end = __heap_start__
-                0x200002b4                        _end = end
-                0x200002b4                        __end = end
+.heap           0x20007600        0x0
+                0x20007600                        __heap_start__ = .
+                0x20007600                        end = __heap_start__
+                0x20007600                        _end = end
+                0x20007600                        __end = end
  *(.heap)
-                0x200002b4                        __heap_end__ = .
-                0x200002b4                        __HeapLimit = __heap_end__
+                0x20007600                        __heap_end__ = .
+                0x20007600                        __HeapLimit = __heap_end__
 
-.stack          0x200002b8        0x0
-                0x200002b8                        _stack = .
+.stack          0x20007600        0x0
+                0x20007600                        _stack = .
  *(.stack)
                 0x20010000                        __StackTop = (ORIGIN (REGION_STACK) + LENGTH (REGION_STACK))
                 0x20010000                        PROVIDE (__stack = __StackTop)
@@ -688,236 +982,260 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000027e       0x34 build/hal/msp432/wdt_msp432.o
  .ARM.attributes
-                0x000002b2       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+                0x000002b2       0x39 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
  .ARM.attributes
-                0x000002e6       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+                0x000002eb       0x39 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
  .ARM.attributes
-                0x0000031a       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
+                0x00000324       0x39 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
  .ARM.attributes
-                0x0000034e       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
+                0x0000035d       0x39 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
  .ARM.attributes
-                0x00000382       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
+                0x00000396       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
  .ARM.attributes
-                0x000003b6       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x000003ca       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
  .ARM.attributes
-                0x000003ea       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
+                0x000003fe       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
  .ARM.attributes
-                0x0000041e       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+                0x00000432       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
  .ARM.attributes
-                0x00000452       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
+                0x00000466       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
  .ARM.attributes
-                0x00000486       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
+                0x0000049a       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
  .ARM.attributes
-                0x000004ba       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
+                0x000004ce       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
  .ARM.attributes
-                0x000004ee       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+                0x00000502       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
  .ARM.attributes
-                0x00000522       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
+                0x00000536       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
  .ARM.attributes
-                0x00000556       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+                0x0000056a       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
  .ARM.attributes
-                0x0000058a       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+                0x0000059e       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
  .ARM.attributes
-                0x000005be       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
+                0x000005d2       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
  .ARM.attributes
-                0x000005f2       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
+                0x00000606       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
  .ARM.attributes
-                0x00000626       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
+                0x0000063a       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
  .ARM.attributes
-                0x0000065a       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
+                0x0000066e       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
  .ARM.attributes
-                0x0000068e       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
+                0x000006a2       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
  .ARM.attributes
-                0x000006c2       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
+                0x000006d6       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
  .ARM.attributes
-                0x000006f6       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
+                0x0000070a       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
  .ARM.attributes
-                0x0000072a       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
+                0x0000073e       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
  .ARM.attributes
-                0x0000075e       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
+                0x00000772       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
  .ARM.attributes
-                0x00000792       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
+                0x000007a6       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
  .ARM.attributes
-                0x000007c6       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
+                0x000007da       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
  .ARM.attributes
-                0x000007fa       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+                0x0000080e       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
  .ARM.attributes
-                0x0000082e       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtend.o
+                0x00000842       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
  .ARM.attributes
-                0x00000862       0x22 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
+                0x00000876       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
+ .ARM.attributes
+                0x000008aa       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
+ .ARM.attributes
+                0x000008de       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+ .ARM.attributes
+                0x00000912       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtend.o
+ .ARM.attributes
+                0x00000946       0x22 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
 
-.comment        0x00000000       0x26
- .comment       0x00000000       0x26 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.comment        0x00000000       0xa4
+ .comment       0x00000000       0xa4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
                                  0x27 (size before relaxing)
- .comment       0x00000026       0x27 build/src/main.o
- .comment       0x00000026       0x27 build/src/system_msp432p401r.o
- .comment       0x00000026       0x27 build/src/video.o
- .comment       0x00000026       0x27 build/src/video_fsm.o
- .comment       0x00000026       0x27 build/gcc/startup_msp432p401r_gcc.o
- .comment       0x00000026       0x27 build/LcdDriver/hal_lcd_msp432.o
- .comment       0x00000026       0x27 build/LcdDriver/lcd_st7735.o
- .comment       0x00000026       0x27 build/hal/msp432/gpio_msp432.o
- .comment       0x00000026       0x27 build/hal/msp432/spi_msp432.o
- .comment       0x00000026       0x27 build/hal/msp432/uart_msp432.o
- .comment       0x00000026       0x27 build/hal/msp432/wdt_msp432.o
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtend.o
+ .comment       0x000000a4       0x27 build/src/main.o
+ .comment       0x000000a4       0x27 build/src/system_msp432p401r.o
+ .comment       0x000000a4       0x27 build/src/video.o
+ .comment       0x000000a4       0x27 build/src/video_fsm.o
+ .comment       0x000000a4       0x27 build/gcc/startup_msp432p401r_gcc.o
+ .comment       0x000000a4       0x27 build/LcdDriver/hal_lcd_msp432.o
+ .comment       0x000000a4       0x27 build/LcdDriver/lcd_st7735.o
+ .comment       0x000000a4       0x27 build/hal/msp432/gpio_msp432.o
+ .comment       0x000000a4       0x27 build/hal/msp432/spi_msp432.o
+ .comment       0x000000a4       0x27 build/hal/msp432/uart_msp432.o
+ .comment       0x000000a4       0x27 build/hal/msp432/wdt_msp432.o
+ .comment       0x000000a4       0x7f /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .comment       0x000000a4       0x7f /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .comment       0x000000a4       0x7f /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .comment       0x000000a4       0x7f /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+ .comment       0x000000a4       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtend.o
 
-.debug_line     0x00000000     0x46d6
+.debug_line     0x00000000     0x5915
  .debug_line    0x00000000       0x75 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
- .debug_line    0x00000075      0x23e build/src/main.o
- .debug_line    0x000002b3      0x356 build/src/system_msp432p401r.o
- .debug_line    0x00000609      0x3fe build/src/video.o
- .debug_line    0x00000a07      0x1c4 build/src/video_fsm.o
- .debug_line    0x00000bcb       0xba build/gcc/startup_msp432p401r_gcc.o
- .debug_line    0x00000c85      0x1b1 build/LcdDriver/hal_lcd_msp432.o
- .debug_line    0x00000e36      0x23e build/LcdDriver/lcd_st7735.o
- .debug_line    0x00001074      0x3a7 build/hal/msp432/gpio_msp432.o
- .debug_line    0x0000141b      0x219 build/hal/msp432/spi_msp432.o
- .debug_line    0x00001634      0x1cb build/hal/msp432/uart_msp432.o
- .debug_line    0x000017ff      0x152 build/hal/msp432/wdt_msp432.o
- .debug_line    0x00001951      0x11e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
- .debug_line    0x00001a6f      0x1b6 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
- .debug_line    0x00001c25      0x12d /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
- .debug_line    0x00001d52       0xc3 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
- .debug_line    0x00001e15       0xd2 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
- .debug_line    0x00001ee7      0x4fc /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
- .debug_line    0x000023e3      0x446 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
- .debug_line    0x00002829      0x446 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
- .debug_line    0x00002c6f      0x2c3 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
- .debug_line    0x00002f32      0x1d1 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
- .debug_line    0x00003103      0x230 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
- .debug_line    0x00003333      0x153 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
- .debug_line    0x00003486      0x193 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
- .debug_line    0x00003619      0x22b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
- .debug_line    0x00003844       0xe7 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
- .debug_line    0x0000392b      0x193 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
- .debug_line    0x00003abe      0x246 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
- .debug_line    0x00003d04      0x198 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
- .debug_line    0x00003e9c      0x27b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
- .debug_line    0x00004117      0x199 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
- .debug_line    0x000042b0      0x199 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
- .debug_line    0x00004449       0x6d /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
- .debug_line    0x000044b6       0x6e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
- .debug_line    0x00004524       0x6d /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
- .debug_line    0x00004591       0x76 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
- .debug_line    0x00004607       0x6e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
- .debug_line    0x00004675       0x61 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+ .debug_line    0x00000075      0x263 build/src/main.o
+ .debug_line    0x000002d8      0x356 build/src/system_msp432p401r.o
+ .debug_line    0x0000062e      0x477 build/src/video.o
+ .debug_line    0x00000aa5      0x1ff build/src/video_fsm.o
+ .debug_line    0x00000ca4       0xba build/gcc/startup_msp432p401r_gcc.o
+ .debug_line    0x00000d5e      0x1b1 build/LcdDriver/hal_lcd_msp432.o
+ .debug_line    0x00000f0f      0x346 build/LcdDriver/lcd_st7735.o
+ .debug_line    0x00001255      0x3a7 build/hal/msp432/gpio_msp432.o
+ .debug_line    0x000015fc      0x219 build/hal/msp432/spi_msp432.o
+ .debug_line    0x00001815      0x1cb build/hal/msp432/uart_msp432.o
+ .debug_line    0x000019e0      0x152 build/hal/msp432/wdt_msp432.o
+ .debug_line    0x00001b32      0x48e /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .debug_line    0x00001fc0      0x39a /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .debug_line    0x0000235a      0x653 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .debug_line    0x000029ad      0x1e3 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
+ .debug_line    0x00002b90      0x11e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+ .debug_line    0x00002cae      0x1b6 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+ .debug_line    0x00002e64      0x12d /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
+ .debug_line    0x00002f91       0xc3 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
+ .debug_line    0x00003054       0xd2 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
+ .debug_line    0x00003126      0x4fc /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+ .debug_line    0x00003622      0x446 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
+ .debug_line    0x00003a68      0x446 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+ .debug_line    0x00003eae      0x2c3 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
+ .debug_line    0x00004171      0x1d1 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
+ .debug_line    0x00004342      0x230 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
+ .debug_line    0x00004572      0x153 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+ .debug_line    0x000046c5      0x193 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
+ .debug_line    0x00004858      0x22b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+ .debug_line    0x00004a83       0xe7 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+ .debug_line    0x00004b6a      0x193 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
+ .debug_line    0x00004cfd      0x246 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
+ .debug_line    0x00004f43      0x198 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
+ .debug_line    0x000050db      0x27b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
+ .debug_line    0x00005356      0x199 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
+ .debug_line    0x000054ef      0x199 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
+ .debug_line    0x00005688       0x6d /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
+ .debug_line    0x000056f5       0x6e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
+ .debug_line    0x00005763       0x6d /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
+ .debug_line    0x000057d0       0x76 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
+ .debug_line    0x00005846       0x6e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
+ .debug_line    0x000058b4       0x61 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
 
 .debug_line_str
                 0x00000000       0x82
  .debug_line_str
                 0x00000000       0x82 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
 
-.debug_info     0x00000000     0xcaa8
+.debug_info     0x00000000     0xf0b5
  .debug_info    0x00000000       0x24 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
- .debug_info    0x00000024      0xac7 build/src/main.o
- .debug_info    0x00000aeb      0xd49 build/src/system_msp432p401r.o
- .debug_info    0x00001834      0x68d build/src/video.o
- .debug_info    0x00001ec1      0x4c2 build/src/video_fsm.o
- .debug_info    0x00002383      0x143 build/gcc/startup_msp432p401r_gcc.o
- .debug_info    0x000024c6      0x5d5 build/LcdDriver/hal_lcd_msp432.o
- .debug_info    0x00002a9b      0x5b5 build/LcdDriver/lcd_st7735.o
- .debug_info    0x00003050      0x6f4 build/hal/msp432/gpio_msp432.o
- .debug_info    0x00003744      0x45c build/hal/msp432/spi_msp432.o
- .debug_info    0x00003ba0      0x3f0 build/hal/msp432/uart_msp432.o
- .debug_info    0x00003f90      0x1db build/hal/msp432/wdt_msp432.o
- .debug_info    0x0000416b      0x10b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
- .debug_info    0x00004276      0x135 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
- .debug_info    0x000043ab      0x11b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
- .debug_info    0x000044c6      0x11e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
- .debug_info    0x000045e4       0xf7 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
- .debug_info    0x000046db      0xe8c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
- .debug_info    0x00005567      0xa33 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
- .debug_info    0x00005f9a      0x9b6 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
- .debug_info    0x00006950      0x87f /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
- .debug_info    0x000071cf      0x7c8 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
- .debug_info    0x00007997      0x284 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
- .debug_info    0x00007c1b      0x71c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
- .debug_info    0x00008337      0x778 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
- .debug_info    0x00008aaf      0xa80 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
- .debug_info    0x0000952f      0x70b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
- .debug_info    0x00009c3a      0x752 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
- .debug_info    0x0000a38c      0x235 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
- .debug_info    0x0000a5c1      0x7b5 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
- .debug_info    0x0000ad76      0x89f /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
- .debug_info    0x0000b615      0x79e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
- .debug_info    0x0000bdb3      0x7bb /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
- .debug_info    0x0000c56e       0xde /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
- .debug_info    0x0000c64c      0x100 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
- .debug_info    0x0000c74c      0x106 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
- .debug_info    0x0000c852       0xac /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
- .debug_info    0x0000c8fe      0x106 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
- .debug_info    0x0000ca04       0xa4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+ .debug_info    0x00000024      0xd6a build/src/main.o
+ .debug_info    0x00000d8e      0xd49 build/src/system_msp432p401r.o
+ .debug_info    0x00001ad7      0x715 build/src/video.o
+ .debug_info    0x000021ec      0x5fc build/src/video_fsm.o
+ .debug_info    0x000027e8      0x143 build/gcc/startup_msp432p401r_gcc.o
+ .debug_info    0x0000292b      0x5d5 build/LcdDriver/hal_lcd_msp432.o
+ .debug_info    0x00002f00      0x913 build/LcdDriver/lcd_st7735.o
+ .debug_info    0x00003813      0x6f4 build/hal/msp432/gpio_msp432.o
+ .debug_info    0x00003f07      0x45c build/hal/msp432/spi_msp432.o
+ .debug_info    0x00004363      0x3f0 build/hal/msp432/uart_msp432.o
+ .debug_info    0x00004753      0x1db build/hal/msp432/wdt_msp432.o
+ .debug_info    0x0000492e      0x833 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .debug_info    0x00005161      0x694 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .debug_info    0x000057f5      0xdfe /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .debug_info    0x000065f3      0x185 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
+ .debug_info    0x00006778      0x10b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+ .debug_info    0x00006883      0x135 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+ .debug_info    0x000069b8      0x11b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
+ .debug_info    0x00006ad3      0x11e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
+ .debug_info    0x00006bf1       0xf7 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
+ .debug_info    0x00006ce8      0xe8c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+ .debug_info    0x00007b74      0xa33 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
+ .debug_info    0x000085a7      0x9b6 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+ .debug_info    0x00008f5d      0x87f /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
+ .debug_info    0x000097dc      0x7c8 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
+ .debug_info    0x00009fa4      0x284 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
+ .debug_info    0x0000a228      0x71c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+ .debug_info    0x0000a944      0x778 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
+ .debug_info    0x0000b0bc      0xa80 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+ .debug_info    0x0000bb3c      0x70b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+ .debug_info    0x0000c247      0x752 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
+ .debug_info    0x0000c999      0x235 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
+ .debug_info    0x0000cbce      0x7b5 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
+ .debug_info    0x0000d383      0x89f /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
+ .debug_info    0x0000dc22      0x79e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
+ .debug_info    0x0000e3c0      0x7bb /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
+ .debug_info    0x0000eb7b       0xde /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
+ .debug_info    0x0000ec59      0x100 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
+ .debug_info    0x0000ed59      0x106 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
+ .debug_info    0x0000ee5f       0xac /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
+ .debug_info    0x0000ef0b      0x106 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
+ .debug_info    0x0000f011       0xa4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
 
-.debug_abbrev   0x00000000     0x3927
+.debug_abbrev   0x00000000     0x40ee
  .debug_abbrev  0x00000000       0x14 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
- .debug_abbrev  0x00000014      0x267 build/src/main.o
- .debug_abbrev  0x0000027b      0x128 build/src/system_msp432p401r.o
- .debug_abbrev  0x000003a3      0x205 build/src/video.o
- .debug_abbrev  0x000005a8      0x19b build/src/video_fsm.o
- .debug_abbrev  0x00000743       0xfe build/gcc/startup_msp432p401r_gcc.o
- .debug_abbrev  0x00000841      0x1c5 build/LcdDriver/hal_lcd_msp432.o
- .debug_abbrev  0x00000a06      0x1da build/LcdDriver/lcd_st7735.o
- .debug_abbrev  0x00000be0      0x1af build/hal/msp432/gpio_msp432.o
- .debug_abbrev  0x00000d8f      0x15e build/hal/msp432/spi_msp432.o
- .debug_abbrev  0x00000eed      0x12f build/hal/msp432/uart_msp432.o
- .debug_abbrev  0x0000101c      0x13c build/hal/msp432/wdt_msp432.o
- .debug_abbrev  0x00001158       0xc9 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
- .debug_abbrev  0x00001221       0xb7 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
- .debug_abbrev  0x000012d8       0xd8 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
- .debug_abbrev  0x000013b0       0xc1 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
- .debug_abbrev  0x00001471       0xcc /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
- .debug_abbrev  0x0000153d      0x408 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
- .debug_abbrev  0x00001945      0x2e4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
- .debug_abbrev  0x00001c29      0x24a /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
- .debug_abbrev  0x00001e73      0x249 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
- .debug_abbrev  0x000020bc      0x19b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
- .debug_abbrev  0x00002257      0x1d4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
- .debug_abbrev  0x0000242b      0x192 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
- .debug_abbrev  0x000025bd      0x1da /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
- .debug_abbrev  0x00002797      0x224 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
- .debug_abbrev  0x000029bb      0x149 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
- .debug_abbrev  0x00002b04      0x1b0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
- .debug_abbrev  0x00002cb4      0x179 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
- .debug_abbrev  0x00002e2d      0x1b0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
- .debug_abbrev  0x00002fdd      0x1ee /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
- .debug_abbrev  0x000031cb      0x1c4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
- .debug_abbrev  0x0000338f      0x1b5 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
- .debug_abbrev  0x00003544       0x96 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
- .debug_abbrev  0x000035da       0xbb /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
- .debug_abbrev  0x00003695       0xc4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
- .debug_abbrev  0x00003759       0xa1 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
- .debug_abbrev  0x000037fa       0xc4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
- .debug_abbrev  0x000038be       0x69 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+ .debug_abbrev  0x00000014      0x2d1 build/src/main.o
+ .debug_abbrev  0x000002e5      0x128 build/src/system_msp432p401r.o
+ .debug_abbrev  0x0000040d      0x20c build/src/video.o
+ .debug_abbrev  0x00000619      0x1d5 build/src/video_fsm.o
+ .debug_abbrev  0x000007ee       0xfe build/gcc/startup_msp432p401r_gcc.o
+ .debug_abbrev  0x000008ec      0x1c5 build/LcdDriver/hal_lcd_msp432.o
+ .debug_abbrev  0x00000ab1      0x2e9 build/LcdDriver/lcd_st7735.o
+ .debug_abbrev  0x00000d9a      0x1af build/hal/msp432/gpio_msp432.o
+ .debug_abbrev  0x00000f49      0x15e build/hal/msp432/spi_msp432.o
+ .debug_abbrev  0x000010a7      0x12f build/hal/msp432/uart_msp432.o
+ .debug_abbrev  0x000011d6      0x13c build/hal/msp432/wdt_msp432.o
+ .debug_abbrev  0x00001312      0x1e6 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .debug_abbrev  0x000014f8      0x1b3 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .debug_abbrev  0x000016ab      0x172 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .debug_abbrev  0x0000181d      0x102 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
+ .debug_abbrev  0x0000191f       0xc9 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+ .debug_abbrev  0x000019e8       0xb7 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+ .debug_abbrev  0x00001a9f       0xd8 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
+ .debug_abbrev  0x00001b77       0xc1 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
+ .debug_abbrev  0x00001c38       0xcc /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
+ .debug_abbrev  0x00001d04      0x408 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+ .debug_abbrev  0x0000210c      0x2e4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
+ .debug_abbrev  0x000023f0      0x24a /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+ .debug_abbrev  0x0000263a      0x249 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
+ .debug_abbrev  0x00002883      0x19b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
+ .debug_abbrev  0x00002a1e      0x1d4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
+ .debug_abbrev  0x00002bf2      0x192 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+ .debug_abbrev  0x00002d84      0x1da /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
+ .debug_abbrev  0x00002f5e      0x224 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+ .debug_abbrev  0x00003182      0x149 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+ .debug_abbrev  0x000032cb      0x1b0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
+ .debug_abbrev  0x0000347b      0x179 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
+ .debug_abbrev  0x000035f4      0x1b0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
+ .debug_abbrev  0x000037a4      0x1ee /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
+ .debug_abbrev  0x00003992      0x1c4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
+ .debug_abbrev  0x00003b56      0x1b5 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
+ .debug_abbrev  0x00003d0b       0x96 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
+ .debug_abbrev  0x00003da1       0xbb /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
+ .debug_abbrev  0x00003e5c       0xc4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
+ .debug_abbrev  0x00003f20       0xa1 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
+ .debug_abbrev  0x00003fc1       0xc4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
+ .debug_abbrev  0x00004085       0x69 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
 
-.debug_aranges  0x00000000      0x640
+.debug_aranges  0x00000000      0xa00
  .debug_aranges
                 0x00000000       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
  .debug_aranges
@@ -925,193 +1243,215 @@ LOAD linker stubs
  .debug_aranges
                 0x00000050       0x28 build/src/system_msp432p401r.o
  .debug_aranges
-                0x00000078       0x58 build/src/video.o
+                0x00000078       0x68 build/src/video.o
  .debug_aranges
-                0x000000d0       0x50 build/src/video_fsm.o
+                0x000000e0       0x50 build/src/video_fsm.o
  .debug_aranges
-                0x00000120       0x28 build/gcc/startup_msp432p401r_gcc.o
+                0x00000130       0x28 build/gcc/startup_msp432p401r_gcc.o
  .debug_aranges
-                0x00000148       0x40 build/LcdDriver/hal_lcd_msp432.o
+                0x00000158       0x40 build/LcdDriver/hal_lcd_msp432.o
  .debug_aranges
-                0x00000188       0x58 build/LcdDriver/lcd_st7735.o
+                0x00000198       0x68 build/LcdDriver/lcd_st7735.o
  .debug_aranges
-                0x000001e0       0x50 build/hal/msp432/gpio_msp432.o
+                0x00000200       0x50 build/hal/msp432/gpio_msp432.o
  .debug_aranges
-                0x00000230       0x50 build/hal/msp432/spi_msp432.o
+                0x00000250       0x50 build/hal/msp432/spi_msp432.o
  .debug_aranges
-                0x00000280       0x40 build/hal/msp432/uart_msp432.o
+                0x000002a0       0x40 build/hal/msp432/uart_msp432.o
  .debug_aranges
-                0x000002c0       0x28 build/hal/msp432/wdt_msp432.o
+                0x000002e0       0x28 build/hal/msp432/wdt_msp432.o
  .debug_aranges
-                0x000002e8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+                0x00000308       0xf8 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
  .debug_aranges
-                0x00000308       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+                0x00000400       0xb8 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
  .debug_aranges
-                0x00000328       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
+                0x000004b8      0x1a8 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
  .debug_aranges
-                0x00000348       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
+                0x00000660       0x48 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
  .debug_aranges
-                0x00000368       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
+                0x000006a8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
  .debug_aranges
-                0x00000388       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x000006c8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
  .debug_aranges
-                0x000003a8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
+                0x000006e8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
  .debug_aranges
-                0x000003c8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+                0x00000708       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
  .debug_aranges
-                0x000003e8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
+                0x00000728       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
  .debug_aranges
-                0x00000408       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
+                0x00000748       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
  .debug_aranges
-                0x00000428       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
+                0x00000768       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
  .debug_aranges
-                0x00000448       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+                0x00000788       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
  .debug_aranges
-                0x00000468       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
+                0x000007a8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
  .debug_aranges
-                0x00000488       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+                0x000007c8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
  .debug_aranges
-                0x000004a8       0x18 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+                0x000007e8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
  .debug_aranges
-                0x000004c0       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
+                0x00000808       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
  .debug_aranges
-                0x000004e0       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
+                0x00000828       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
  .debug_aranges
-                0x00000500       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
+                0x00000848       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
  .debug_aranges
-                0x00000520       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
+                0x00000868       0x18 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
  .debug_aranges
-                0x00000540       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
+                0x00000880       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
  .debug_aranges
-                0x00000560       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
+                0x000008a0       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
  .debug_aranges
-                0x00000580       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
+                0x000008c0       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
  .debug_aranges
-                0x000005a0       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
+                0x000008e0       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
  .debug_aranges
-                0x000005c0       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
+                0x00000900       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
  .debug_aranges
-                0x000005e0       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
+                0x00000920       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
  .debug_aranges
-                0x00000600       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
+                0x00000940       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
  .debug_aranges
-                0x00000620       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+                0x00000960       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
+ .debug_aranges
+                0x00000980       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
+ .debug_aranges
+                0x000009a0       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
+ .debug_aranges
+                0x000009c0       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
+ .debug_aranges
+                0x000009e0       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
 
-.debug_str      0x00000000     0x2bfa
- .debug_str     0x00000000     0x2bfa /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+.debug_str      0x00000000     0x3c1c
+ .debug_str     0x00000000     0x3c1c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
                                  0x8e (size before relaxing)
- .debug_str     0x00002bfa      0x9f1 build/src/main.o
- .debug_str     0x00002bfa      0xa58 build/src/system_msp432p401r.o
- .debug_str     0x00002bfa      0x4eb build/src/video.o
- .debug_str     0x00002bfa      0x514 build/src/video_fsm.o
- .debug_str     0x00002bfa      0x217 build/gcc/startup_msp432p401r_gcc.o
- .debug_str     0x00002bfa      0x61d build/LcdDriver/hal_lcd_msp432.o
- .debug_str     0x00002bfa      0x599 build/LcdDriver/lcd_st7735.o
- .debug_str     0x00002bfa      0x44e build/hal/msp432/gpio_msp432.o
- .debug_str     0x00002bfa      0x44f build/hal/msp432/spi_msp432.o
- .debug_str     0x00002bfa      0x439 build/hal/msp432/uart_msp432.o
- .debug_str     0x00002bfa      0x21b build/hal/msp432/wdt_msp432.o
- .debug_str     0x00002bfa      0x1fa /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
- .debug_str     0x00002bfa      0x1ad /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
- .debug_str     0x00002bfa      0x1bf /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
- .debug_str     0x00002bfa      0x1d6 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
- .debug_str     0x00002bfa      0x1d0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
- .debug_str     0x00002bfa      0x6bf /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
- .debug_str     0x00002bfa      0x543 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
- .debug_str     0x00002bfa      0x59d /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
- .debug_str     0x00002bfa      0x53c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
- .debug_str     0x00002bfa      0x4cc /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
- .debug_str     0x00002bfa      0x290 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
- .debug_str     0x00002bfa      0x4da /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
- .debug_str     0x00002bfa      0x4c5 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
- .debug_str     0x00002bfa      0x529 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
- .debug_str     0x00002bfa      0x4bc /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
- .debug_str     0x00002bfa      0x4b2 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
- .debug_str     0x00002bfa      0x242 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
- .debug_str     0x00002bfa      0x4c0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
- .debug_str     0x00002bfa      0x4db /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
- .debug_str     0x00002bfa      0x4c0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
- .debug_str     0x00002bfa      0x4c2 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
- .debug_str     0x00002bfa      0x198 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
- .debug_str     0x00002bfa      0x196 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
- .debug_str     0x00002bfa      0x193 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
- .debug_str     0x00002bfa      0x11d /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
- .debug_str     0x00002bfa      0x196 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
- .debug_str     0x00002bfa      0x169 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+ .debug_str     0x00003c1c      0xbee build/src/main.o
+ .debug_str     0x00003c1c      0xa58 build/src/system_msp432p401r.o
+ .debug_str     0x00003c1c      0x52f build/src/video.o
+ .debug_str     0x00003c1c      0x679 build/src/video_fsm.o
+ .debug_str     0x00003c1c      0x217 build/gcc/startup_msp432p401r_gcc.o
+ .debug_str     0x00003c1c      0x61d build/LcdDriver/hal_lcd_msp432.o
+ .debug_str     0x00003c1c      0x88b build/LcdDriver/lcd_st7735.o
+ .debug_str     0x00003c1c      0x44e build/hal/msp432/gpio_msp432.o
+ .debug_str     0x00003c1c      0x44f build/hal/msp432/spi_msp432.o
+ .debug_str     0x00003c1c      0x439 build/hal/msp432/uart_msp432.o
+ .debug_str     0x00003c1c      0x21b build/hal/msp432/wdt_msp432.o
+ .debug_str     0x00003c1c      0x6bc /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .debug_str     0x00003c1c      0x5a6 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .debug_str     0x00003c1c      0x93e /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .debug_str     0x00003c1c      0x276 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
+ .debug_str     0x00003c1c      0x1fa /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+ .debug_str     0x00003c1c      0x1ad /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+ .debug_str     0x00003c1c      0x1bf /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
+ .debug_str     0x00003c1c      0x1d6 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
+ .debug_str     0x00003c1c      0x1d0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
+ .debug_str     0x00003c1c      0x6bf /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+ .debug_str     0x00003c1c      0x543 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
+ .debug_str     0x00003c1c      0x59d /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+ .debug_str     0x00003c1c      0x53c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
+ .debug_str     0x00003c1c      0x4cc /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
+ .debug_str     0x00003c1c      0x290 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
+ .debug_str     0x00003c1c      0x4da /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+ .debug_str     0x00003c1c      0x4c5 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
+ .debug_str     0x00003c1c      0x529 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+ .debug_str     0x00003c1c      0x4bc /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+ .debug_str     0x00003c1c      0x4b2 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
+ .debug_str     0x00003c1c      0x242 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
+ .debug_str     0x00003c1c      0x4c0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
+ .debug_str     0x00003c1c      0x4db /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
+ .debug_str     0x00003c1c      0x4c0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
+ .debug_str     0x00003c1c      0x4c2 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
+ .debug_str     0x00003c1c      0x198 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
+ .debug_str     0x00003c1c      0x196 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
+ .debug_str     0x00003c1c      0x193 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
+ .debug_str     0x00003c1c      0x11d /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
+ .debug_str     0x00003c1c      0x196 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
+ .debug_str     0x00003c1c      0x169 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
 
 .debug_rnglists
-                0x00000000      0x354
+                0x00000000      0x36c
  .debug_rnglists
                 0x00000000       0x20 build/src/main.o
  .debug_rnglists
                 0x00000020       0x1b build/src/system_msp432p401r.o
  .debug_rnglists
-                0x0000003b       0x42 build/src/video.o
+                0x0000003b       0x4e build/src/video.o
  .debug_rnglists
-                0x0000007d       0x38 build/src/video_fsm.o
+                0x00000089       0x38 build/src/video_fsm.o
  .debug_rnglists
-                0x000000b5       0x19 build/gcc/startup_msp432p401r_gcc.o
+                0x000000c1       0x19 build/gcc/startup_msp432p401r_gcc.o
  .debug_rnglists
-                0x000000ce       0x2b build/LcdDriver/hal_lcd_msp432.o
+                0x000000da       0x2b build/LcdDriver/hal_lcd_msp432.o
  .debug_rnglists
-                0x000000f9       0x40 build/LcdDriver/lcd_st7735.o
+                0x00000105       0x4c build/LcdDriver/lcd_st7735.o
  .debug_rnglists
-                0x00000139       0x71 build/hal/msp432/gpio_msp432.o
+                0x00000151       0x71 build/hal/msp432/gpio_msp432.o
  .debug_rnglists
-                0x000001aa       0x38 build/hal/msp432/spi_msp432.o
+                0x000001c2       0x38 build/hal/msp432/spi_msp432.o
  .debug_rnglists
-                0x000001e2       0x2c build/hal/msp432/uart_msp432.o
+                0x000001fa       0x2c build/hal/msp432/uart_msp432.o
  .debug_rnglists
-                0x0000020e       0x19 build/hal/msp432/wdt_msp432.o
+                0x00000226       0x19 build/hal/msp432/wdt_msp432.o
  .debug_rnglists
-                0x00000227       0x77 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x0000023f       0x77 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
  .debug_rnglists
-                0x0000029e       0x59 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
+                0x000002b6       0x59 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
  .debug_rnglists
-                0x000002f7       0x1e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+                0x0000030f       0x1e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
  .debug_rnglists
-                0x00000315       0x13 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
+                0x0000032d       0x13 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
  .debug_rnglists
-                0x00000328       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
+                0x00000340       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
 
-.debug_frame    0x00000000      0xf18
- .debug_frame   0x00000000       0x74 build/src/main.o
- .debug_frame   0x00000074       0x58 build/src/system_msp432p401r.o
- .debug_frame   0x000000cc      0x14c build/src/video.o
- .debug_frame   0x00000218      0x114 build/src/video_fsm.o
- .debug_frame   0x0000032c       0x4c build/gcc/startup_msp432p401r_gcc.o
- .debug_frame   0x00000378       0xb8 build/LcdDriver/hal_lcd_msp432.o
- .debug_frame   0x00000430      0x138 build/LcdDriver/lcd_st7735.o
- .debug_frame   0x00000568      0x110 build/hal/msp432/gpio_msp432.o
- .debug_frame   0x00000678      0x128 build/hal/msp432/spi_msp432.o
- .debug_frame   0x000007a0       0xd8 build/hal/msp432/uart_msp432.o
- .debug_frame   0x00000878       0x60 build/hal/msp432/wdt_msp432.o
- .debug_frame   0x000008d8       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
- .debug_frame   0x00000904       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
- .debug_frame   0x00000930       0x28 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
- .debug_frame   0x00000958       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
- .debug_frame   0x00000978       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
- .debug_frame   0x000009ac       0xf4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
- .debug_frame   0x00000aa0       0x8c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
- .debug_frame   0x00000b2c       0x50 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
- .debug_frame   0x00000b7c       0x58 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
- .debug_frame   0x00000bd4       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
- .debug_frame   0x00000c08       0x38 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
- .debug_frame   0x00000c40       0x30 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
- .debug_frame   0x00000c70       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
- .debug_frame   0x00000c9c       0x8c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
- .debug_frame   0x00000d28       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
- .debug_frame   0x00000d54       0x40 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
- .debug_frame   0x00000d94       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
- .debug_frame   0x00000dc0       0x40 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
- .debug_frame   0x00000e00       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
- .debug_frame   0x00000e2c       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
- .debug_frame   0x00000e58       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
- .debug_frame   0x00000e78       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
- .debug_frame   0x00000e98       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
- .debug_frame   0x00000eb8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
- .debug_frame   0x00000ed8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
- .debug_frame   0x00000ef8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+.debug_frame    0x00000000     0x1ea8
+ .debug_frame   0x00000000       0x70 build/src/main.o
+ .debug_frame   0x00000070       0x58 build/src/system_msp432p401r.o
+ .debug_frame   0x000000c8      0x198 build/src/video.o
+ .debug_frame   0x00000260      0x114 build/src/video_fsm.o
+ .debug_frame   0x00000374       0x4c build/gcc/startup_msp432p401r_gcc.o
+ .debug_frame   0x000003c0       0xb8 build/LcdDriver/hal_lcd_msp432.o
+ .debug_frame   0x00000478      0x168 build/LcdDriver/lcd_st7735.o
+ .debug_frame   0x000005e0      0x110 build/hal/msp432/gpio_msp432.o
+ .debug_frame   0x000006f0      0x128 build/hal/msp432/spi_msp432.o
+ .debug_frame   0x00000818       0xd8 build/hal/msp432/uart_msp432.o
+ .debug_frame   0x000008f0       0x60 build/hal/msp432/wdt_msp432.o
+ .debug_frame   0x00000950      0x434 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .debug_frame   0x00000d84      0x2e0 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .debug_frame   0x00001064      0x794 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .debug_frame   0x000017f8       0x70 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
+ .debug_frame   0x00001868       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+ .debug_frame   0x00001894       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+ .debug_frame   0x000018c0       0x28 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-exit.o)
+ .debug_frame   0x000018e8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-atexit.o)
+ .debug_frame   0x00001908       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fini.o)
+ .debug_frame   0x0000193c       0xf4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+ .debug_frame   0x00001a30       0x8c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
+ .debug_frame   0x00001abc       0x50 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+ .debug_frame   0x00001b0c       0x58 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
+ .debug_frame   0x00001b64       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
+ .debug_frame   0x00001b98       0x38 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__atexit.o)
+ .debug_frame   0x00001bd0       0x30 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+ .debug_frame   0x00001c00       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
+ .debug_frame   0x00001c2c       0x8c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+ .debug_frame   0x00001cb8       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
+ .debug_frame   0x00001ce4       0x40 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-__call_atexit.o)
+ .debug_frame   0x00001d24       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
+ .debug_frame   0x00001d50       0x40 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
+ .debug_frame   0x00001d90       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
+ .debug_frame   0x00001dbc       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
+ .debug_frame   0x00001de8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(close.o)
+ .debug_frame   0x00001e08       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(lseek.o)
+ .debug_frame   0x00001e28       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(read.o)
+ .debug_frame   0x00001e48       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(sbrk.o)
+ .debug_frame   0x00001e68       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(write.o)
+ .debug_frame   0x00001e88       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a(_exit.o)
+
+.debug_ranges   0x00000000      0x360
+ .debug_ranges  0x00000000       0xe8 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(dma.o)
+ .debug_ranges  0x000000e8       0xa8 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+ .debug_ranges  0x00000190      0x198 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(spi.o)
+ .debug_ranges  0x00000328       0x38 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(cpu.o)
 
 .debug_loclists
                 0x00000000     0x142d

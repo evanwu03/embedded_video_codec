@@ -95,4 +95,8 @@ Most work these past two days has been defining the state machine and refactorin
 I've decided to create one structure to handle video data and operations. This is helped simplify my test as well since
 data can be kept encapsulated by video object
 
+# 20260302 
+
+- Got the video printing to screen but it corrupts after each frame nor does it print to 128x128; Only a portion of the screen is printed to.
+
 

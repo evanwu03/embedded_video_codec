@@ -2,6 +2,8 @@
 
 #include "../include/video_fsm.h"
 #include "../LcdDriver/lcd.h"
+#include "../LcdDriver/hal_lcd.h"
+#include "../hal/include/gpio.h"
 
 
 typedef void (*state_handler_t)(video_handler_t *video);
@@ -110,10 +112,11 @@ void video_state_decode(video_handler_t* video)  {
 /// @param video 
 void video_state_transmit(video_handler_t* video) { 
 
-    const unsigned long width = video->tx_line_pixels;
-
     // finished?
     if (video->frame_pos >= video->frame_pixels) {
+        // Must pull CS back high after writing
+        gpio_write(&lcd_cs, true);
+        gpio_write(&lcd_dc, false);
         video->frame_pos = 0;
         video->tx_started = false;
         video_sm_transition(video, VIDEO_STATE_DECODE_FRAME);
@@ -127,25 +130,25 @@ void video_state_transmit(video_handler_t* video) {
 
     // One-time per frame: set LCD window and start RAM write stream
     if (!video->tx_started) {
-        lcd_set_window(0, 0,
-                            (uint16_t)(video->config.width  - 1),
-                            (uint16_t)(video->config.height - 1));
-        lcd_ramwr();             
+        lcd_set_window(0, 0, video->config.width-1, video->config.height-1);
+
+        lcd_ramwr(); 
+
         video->tx_started = true;
         // fall through and send first line immediately (or return if you prefer)
     }
 
     // Prepare next line of pixels into tx_line
     // This should fill exactly 'width' pixels if frame_pixels == width*height.
-    if (!video_prepare_tx_line(video)) {     // or video_prepare_tx_line(v)
+    /*  if (!video_prepare_tx_line(video)) {     // or video_prepare_tx_line(v)
         // treat as error: invalid frame_pos, palette index out of range, etc.
         video_sm_transition(video, VIDEO_STATE_IDLE); // or FAULT
         return;
-    }
+    } */
+    video_prepare_tx_line(video);
 
     // Start DMA on this line (width * 2 bytes)
-    video->tx_dma_busy = true;
-    lcd_tx_pixels_dma(video->tx_line, width);
+    lcd_tx_pixels_dma(video->tx_line, 2*video->tx_line_pixels);
 
     // Advance frame_pos AFTER DMA completes (recommended)
     // So do NOT increment here; increment in DMA done callback.

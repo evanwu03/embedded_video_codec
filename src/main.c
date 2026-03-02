@@ -26,13 +26,9 @@
 #include "../include/video_fsm.h"
 
 
-// User sets dimensions of LED here
-#define WIDTH 128
-#define HEIGHT 128 
- 
-
-// current frame palette index buffer
-static uint8_t frame_buf[WIDTH*HEIGHT];
+// User sets dimensions of LCD here
+#define WIDTH 108
+#define HEIGHT 122 
 
 // Peripherals 
 struct wdt wdt_a;
@@ -61,6 +57,17 @@ static const struct wdt_config_t wdt_config_interval_timer_1s = {
 };
 
 
+
+// Video Handler 
+video_handler_t video;
+video_handler_t* video_ctx = &video;
+
+// Frame buffers
+static uint8_t frame_buf[WIDTH*HEIGHT];
+static uint8_t tmp_delta[WIDTH*HEIGHT];
+static uint8_t tx_buf[2*WIDTH];
+
+
 int main(void)
 {
     WDT_hold(&wdt_a);
@@ -81,21 +88,35 @@ int main(void)
     gpio_init_output(&led1, PORT1_BASE, BIT0);
     gpio_write(&led1, false); // Turn off LED initially
 
+
     lcd_init();
+    lcd_dma_init();
+
+
+    // Video configurations
+    video_init(&video, video_stream, video_len);
+    video_set_frame_buffer(&video, frame_buf, WIDTH*HEIGHT);
+    video_set_delta_buffer(&video, tmp_delta);
+    video_set_tx_buffer(&video, tx_buf, WIDTH);
+
     
+    // Initialize state machine
+    video_sm_init(&video);
+
 
 
     __enable_irq();
 
-
-    lcd_draw_image(wolf_girl_map, 0, 0, WIDTH, HEIGHT);
+    //lcd_draw_image(wolf_girl_map, 0, 0, 128, 128);
 
     
+    // Request start 
+    video.start_requested = true;
 
     // Run state machine here
     while (1)
     {
-        //video_sm_run(&video);
+        video_sm_run(&video);
     }
    
 }

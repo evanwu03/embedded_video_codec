@@ -82,13 +82,13 @@ typedef struct {
     uint8_t* frame_buf;                    // pointer to current frame indices
     unsigned long frame_pixels;            // size of framebuffer in pixels 
     uint8_t* tmp_delta;                    // pointer to hold frames delta  
-    uint16_t* tx_line;                     // pointer to 128-pixel line buffer, assumes 16-bit BGR values for now
+    uint8_t* tx_line;                     // pointer to 128-pixel line buffer, assumes 16-bit BGR values for now
     unsigned long tx_line_pixels;          // size of tx_line in pixels
     unsigned long frame_pos;               // current 
 
     bool start_requested;
     bool tx_started;
-    bool tx_dma_busy;
+    volatile bool tx_dma_busy;
 
 } video_handler_t;
 
@@ -96,8 +96,14 @@ typedef struct {
 
 void video_init(video_handler_t* video, const uint8_t *stream, unsigned long len);
 
-// Attaches video handler to output buffer
+// Attaches frame buffer to video handle
 bool video_set_frame_buffer(video_handler_t* video, uint8_t* framebuf, const unsigned long framebuf_len);
+
+// Attach delta buffer to video handle
+bool video_set_delta_buffer(video_handler_t* video, uint8_t* delta);
+
+// Attach tx buffer to video handle
+bool video_set_tx_buffer(video_handler_t* video, uint8_t* tx_buf, const unsigned long tx_len);
 
 
 // Decoding Functions

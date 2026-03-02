@@ -3,12 +3,32 @@
 #include "lcd.h"
 #include "hal_lcd.h"
 #include "../hal/include/gpio.h"
+#include <ti/devices/msp432p4xx/driverlib/driverlib.h> // For DMA drivers
+#include "../include/video.h"
 
 
+// pointer to the video handler defined in main.c
+extern video_handler_t* video_ctx; 
 
 // LCD Screen Dimensions
 #define LCD_VERTICAL_MAX                   128
 #define LCD_HORIZONTAL_MAX                 128
+
+
+
+/* DMA Control Table */
+#if defined(__TI_COMPILER_VERSION__)
+#pragma DATA_ALIGN(MSP_EXP432P401RLP_DMAControlTable, 1024)
+#elif defined(__IAR_SYSTEMS_ICC__)
+#pragma data_alignment=1024
+#elif defined(__GNUC__)
+__attribute__ ((aligned (1024)))
+#elif defined(__CC_ARM)
+__align(1024)
+#endif
+// DMA Control Table 
+static DMA_ControlTable MSP_EXP432P401RLP_DMAControlTable[32];
+
 
 
 // STT735 Instruction Set
@@ -141,8 +161,8 @@ void lcd_init() {
     // Select row and column frame address 
     gpio_write(&lcd_cs, false);
     HAL_LCD_write_command(MADCTL);
-    HAL_LCD_write_data(ORDER_RGB); 
-    //HAL_LCD_write_data(ORDER_BGR); 
+    //HAL_LCD_write_data(ORDER_RGB); 
+    HAL_LCD_write_data(ORDER_BGR); 
     gpio_write(&lcd_cs, true);
     
 
@@ -185,15 +205,61 @@ void lcd_set_window(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1) {
 }
 
 
-void lcd_tx_pixels_dma(uint16_t* buf, unsigned long width) { 
+void lcd_dma_init() { 
+
+    // Must enable DMA module before configuration
+    DMA_enableModule();
+    DMA_setControlBase(MSP_EXP432P401RLP_DMAControlTable);
 
 
+    DMA_assignChannel(DMA_CH0_EUSCIB0TX0); 
 
+    DMA_setChannelControl(DMA_CH0_EUSCIB0TX0 | UDMA_PRI_SELECT, 
+        UDMA_SIZE_8 | UDMA_SRC_INC_8 | UDMA_DST_INC_NONE | UDMA_ARB_1
+    );
+    
+
+    /* enable DMA interrupt */
+    DMA_assignInterrupt(INT_DMA_INT1, 0);
+    DMA_clearInterruptFlag(DMA_CH0_EUSCIB0TX0 & 0x0F); // Check the mask
+
+
+    // Assigning/Enabling interrupts 
+    Interrupt_enableInterrupt(INT_DMA_INT1);
+    DMA_enableInterrupt(INT_DMA_INT1);
 }
 
-void lcd_ramwr() {
 
-    // Sets LCD for R/W mode
+
+/// @brief Initiate DMA transfer 
+/// @param buf 
+/// @param width 
+/// @return 
+bool lcd_tx_pixels_dma(uint8_t* buf, unsigned long width) { 
+
+
+    if (video_ctx->tx_dma_busy) {
+        return false;
+    }
+    video_ctx->tx_dma_busy = true;
+    
+
+    DMA_setChannelTransfer(DMA_CH0_EUSCIB0TX0 | UDMA_PRI_SELECT, 
+        UDMA_MODE_BASIC, buf, (void *)SPI_getTransmitBufferAddressForDMA(EUSCI_B0_BASE), 
+        width
+    );
+
+    DMA_enableChannel(0);
+    return true;
+}
+
+
+
+/// @brief Enables memory write for LCD screen
+inline void lcd_ramwr() {
+    HAL_LCD_write_command(RAMWR); // must send command before data lol
+    gpio_write(&lcd_cs, false);
+    gpio_write(&lcd_dc, true); // Must be held high when writing new pixels to lcd. maybe rename this function??
 }
 
 
@@ -234,7 +300,7 @@ void lcd_clear_screen() {
 
     gpio_write(&lcd_cs, false);
     HAL_LCD_write_command(RAMWR);
-    for (int i = 0; i < 16384; i++)
+    for (int i = 0; i < 16384; i++) // Probably should not hard code this
     {
         HAL_LCD_write_data(0x00);
         HAL_LCD_write_data(0x00);
@@ -259,5 +325,25 @@ void lcd_draw_image(const uint8_t* pixels, uint8_t startX, uint8_t startY, uint8
     }
     gpio_write(&lcd_cs, true);
 
+
+}
+
+
+
+// DMA ISR 
+void DMA_INT1_IRQHandler(void)
+{
+
+    DMA_clearInterruptFlag(0);
+
+    // Clear tx_dma_busy flag
+    video_ctx->tx_dma_busy = false;
+    
+    // Update the frame position
+    video_ctx->frame_pos += video_ctx->tx_line_pixels; // because tx_line_buffer is split into 8 this has to be divided in 2, janky i know
+
+    /* Disable the interrupt to allow execution */
+    //Interrupt_disableInterrupt(INT_DMA_INT1);
+    //DMA_disableInterrupt(INT_DMA_INT1);
 
 }
