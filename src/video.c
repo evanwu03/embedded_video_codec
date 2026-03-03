@@ -73,6 +73,16 @@ bool video_set_tx_buffer(video_handler_t* video, uint8_t* tx_buf, const unsigned
 }
 
 
+/// @brief Construct bgr565 palette from original should be called after parsing palette
+/// @param video 
+void video_build_lut(video_handler_t* video) { 
+    for (int i = 0; i < MAX_PALETTE_COLORS; i++) {
+            video->lut565[i] = pack_bgr565(video->palette[i]); // Would it be better to just transform the original palette?
+    }
+}
+
+
+
 void rle_decode_frame(video_handler_t* video) { 
 
     unsigned long pixels_decoded = 0;
@@ -137,12 +147,23 @@ bool video_prepare_tx_line(video_handler_t* video) {
     const unsigned long remaining = video->frame_pixels - video->frame_pos;
     const unsigned long n = (remaining < width) ? remaining : width; // skeptical about how this is worded, should clamp to <= width either way
 
-    for (size_t j = 0; j < n; j++) { 
+    /* for (size_t j = 0; j < n; j++) { 
         const uint8_t idx = video->frame_buf[video->frame_pos + j];
         uint16_t pixel = pack_bgr565(video->palette[idx]);
         video->tx_line[2*j+0] = (uint8_t)(pixel >> 8);   // MSB first
         video->tx_line[2*j+1] = (uint8_t)(pixel & 0xFF); // LSB
+    } */
+
+    // Let's use a precomputed lookup table instead of performing manual lookups
+
+    for (size_t j = 0; j < n; j++) { 
+        const uint8_t idx = video->frame_buf[video->frame_pos + j];
+        uint16_t pixel = video->lut565[idx]; 
+        video->tx_line[2*j+0] = (uint8_t)(pixel >> 8);   // MSB first
+        video->tx_line[2*j+1] = (uint8_t)(pixel & 0xFF); // LSB
     }
+
+
 
     // Don't advance frame_pos yet, do after DMA completes
     return true;  

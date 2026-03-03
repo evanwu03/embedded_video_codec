@@ -75,6 +75,7 @@ typedef struct {
      
     const uint8_t* stream;                 // base pointer to video file 
     uint32_t palette[MAX_PALETTE_COLORS];  // pointer to palette 
+    uint16_t lut565[MAX_PALETTE_COLORS];
     unsigned long cur;                     // current byte index into the stream
     unsigned long len;                     // total bytes in the stream
 
@@ -105,6 +106,8 @@ bool video_set_delta_buffer(video_handler_t* video, uint8_t* delta);
 // Attach tx buffer to video handle
 bool video_set_tx_buffer(video_handler_t* video, uint8_t* tx_buf, const unsigned long tx_len);
 
+// Computes lookup table from palette
+void video_build_lut(video_handler_t* video); 
 
 // Decoding Functions
 void rle_decode_frame(video_handler_t* video); 

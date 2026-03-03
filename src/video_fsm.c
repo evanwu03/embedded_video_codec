@@ -80,6 +80,9 @@ void video_state_parse_header(video_handler_t* video) {
         return;
     }
 
+    // Build lookup table for bgr565 or whichever color format
+    video_build_lut(video);
+
     // If successful transition to decoding state
     video_sm_transition(video, VIDEO_STATE_DECODE_FRAME);
 

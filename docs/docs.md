@@ -100,4 +100,7 @@ data can be kept encapsulated by video object
 - Got the video printing to screen but it corrupts after each frame nor does it print to 128x128; Only a portion of the screen is printed to.
 - After some challenges with the DMA buffer (SPI only transfers 8 bits at a time and we tried to send 16 bit words, so endianess was incorrect), we are successful in playing an video. The first video in question was requested by my friend of dancing cyborg furry.
 - Next step is to optimize the frame rate since the original in question was rendered at 25.0 fps. I've done some math before I think and 25.0 fps should be possible on the msp432. 
-- 
+- Delay between transmitting frames was about 35 ms. I've decided to precompute a lookup table in BGR565 format from color palette during initialization to save on cycles. Didn't see too noticeable improvement from this however.
+- Next optimization technique will be increasing the size of the DMA buffer to store more than 1 line or possibly in chunks
+
+

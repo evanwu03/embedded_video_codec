@@ -72,6 +72,9 @@ static uint8_t tmp_delta[WIDTH*HEIGHT];
 static uint8_t tx_buf[2*WIDTH];
 
 
+//uint16_t lut565[256];
+
+
 int main(void)
 {
 
@@ -118,6 +121,7 @@ int main(void)
     
     // Initialize state machine
     video_sm_init(&video);
+
 
 
 
