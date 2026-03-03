@@ -27,7 +27,7 @@ void lcd_dma_init();
 /// @brief send pixel buffer over SPI DMA
 /// @param buf pointer to buffef 
 /// @param width size of buffer
-bool lcd_tx_pixels_dma(uint8_t* buf, unsigned long width);
+bool lcd_tx_pixels_dma(uint8_t* buf, unsigned long bytes);
 
 
 

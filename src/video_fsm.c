@@ -145,7 +145,7 @@ void video_state_transmit(video_handler_t* video) {
     video_prepare_tx_line(video);
 
     // Start DMA on this line (width * 2 bytes)
-    lcd_tx_pixels_dma(video->tx_line, 2*video->tx_line_pixels); //  To-Do don't make this hardcoded
+    lcd_tx_pixels_dma(video->tx_line, 2*video->pending_pixels); //  To-Do don't make this hardcoded
 
     // Advance frame_pos AFTER DMA completes (recommended)
     // So do NOT increment here; increment in DMA done callback.

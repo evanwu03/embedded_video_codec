@@ -2,6 +2,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <assert.h>
 
 #include <msp432p401r.h>
 
@@ -69,10 +70,12 @@ video_handler_t* video_ctx = &video;
 // Frame buffers
 static uint8_t frame_buf[WIDTH*HEIGHT];
 static uint8_t tmp_delta[WIDTH*HEIGHT];
-static uint8_t tx_buf[2*WIDTH];
+
+// NOTE: Apparently DMA (PL230) is limited to 1024 data transfers in otherwards buffer is limited to 1024 bytes on 8-bit SPI
+static uint8_t tx_buf[2*WIDTH*VIDEO_CHUNK_LINES];
+_Static_assert(sizeof(tx_buf)/sizeof(uint8_t) <= 1024, "DMA in MSP432 is limited up to 1024 data transfers");
 
 
-//uint16_t lut565[256];
 
 
 int main(void)
@@ -116,7 +119,7 @@ int main(void)
     video_init(&video, video_stream, video_len);
     video_set_frame_buffer(&video, frame_buf, WIDTH*HEIGHT);
     video_set_delta_buffer(&video, tmp_delta);
-    video_set_tx_buffer(&video, tx_buf, WIDTH);
+    video_set_tx_buffer(&video, tx_buf, 2*WIDTH*VIDEO_CHUNK_LINES);
 
     
     // Initialize state machine

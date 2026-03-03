@@ -15,7 +15,6 @@ extern video_handler_t* video_ctx;
 #define LCD_HORIZONTAL_MAX                 128
 
 
-
 /* DMA Control Table */
 #if defined(__TI_COMPILER_VERSION__)
 #pragma DATA_ALIGN(MSP_EXP432P401RLP_DMAControlTable, 1024)
@@ -235,7 +234,7 @@ void lcd_dma_init() {
 /// @param buf 
 /// @param width 
 /// @return 
-bool lcd_tx_pixels_dma(uint8_t* buf, unsigned long width) { 
+bool lcd_tx_pixels_dma(uint8_t* buf, unsigned long bytes) { 
 
 
     if (video_ctx->tx_dma_busy) {
@@ -246,7 +245,7 @@ bool lcd_tx_pixels_dma(uint8_t* buf, unsigned long width) {
 
     DMA_setChannelTransfer(DMA_CH0_EUSCIB0TX0 | UDMA_PRI_SELECT, 
         UDMA_MODE_BASIC, buf, (void *)SPI_getTransmitBufferAddressForDMA(EUSCI_B0_BASE), 
-        width
+        bytes
     );
 
     DMA_enableChannel(0);
@@ -340,8 +339,8 @@ void DMA_INT1_IRQHandler(void)
     video_ctx->tx_dma_busy = false;
     
     // Update the frame position
-    video_ctx->frame_pos += video_ctx->tx_line_pixels; // because tx_line_buffer is split into 8 this has to be divided in 2, janky i know
-
+    video_ctx->frame_pos += video_ctx->pending_pixels; // because tx_line_buffer is split into 8 this has to be divided in 2, janky i know
+    video_ctx->pending_pixels = 0;
     /* Disable the interrupt to allow execution */
     //Interrupt_disableInterrupt(INT_DMA_INT1);
     //DMA_disableInterrupt(INT_DMA_INT1);

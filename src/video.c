@@ -26,7 +26,7 @@ void video_init(video_handler_t *video, const uint8_t *stream, unsigned long len
     video->tmp_delta = NULL;
 
     video->tx_line = NULL;
-    video->tx_line_pixels = 0;
+    video->pending_pixels = 0;
     video->frame_pos = 0;
 
     video->start_requested = false;
@@ -68,7 +68,7 @@ bool video_set_tx_buffer(video_handler_t* video, uint8_t* tx_buf, const unsigned
     if (video == NULL || tx_buf == NULL || tx_len == 0) return false;
  
     video->tx_line = tx_buf;
-    video->tx_line_pixels = tx_len;
+    //video->pending_pixels = tx_len;
     return true;
 }
 
@@ -138,14 +138,13 @@ void delta_decode_frame(video_handler_t* video) {
 // Tranmsit frame to LCD 
 bool video_prepare_tx_line(video_handler_t* video) { 
 
-    unsigned long width = video->tx_line_pixels;
-
     if (video->frame_pos >= video->frame_pixels) {
         return false; // nothing to send / invalid
     }
 
     const unsigned long remaining = video->frame_pixels - video->frame_pos;
-    const unsigned long n = (remaining < width) ? remaining : width; // skeptical about how this is worded, should clamp to <= width either way
+    const unsigned long max_pixels = video->config.width * VIDEO_CHUNK_LINES;
+    const unsigned long n_pixels= (remaining < max_pixels) ? remaining : max_pixels; // skeptical about how this is worded
 
     /* for (size_t j = 0; j < n; j++) { 
         const uint8_t idx = video->frame_buf[video->frame_pos + j];
@@ -156,14 +155,15 @@ bool video_prepare_tx_line(video_handler_t* video) {
 
     // Let's use a precomputed lookup table instead of performing manual lookups
 
-    for (size_t j = 0; j < n; j++) { 
-        const uint8_t idx = video->frame_buf[video->frame_pos + j];
+    for (size_t i = 0; i < n_pixels; i++) { 
+        const uint8_t idx = video->frame_buf[video->frame_pos + i];
         uint16_t pixel = video->lut565[idx]; 
-        video->tx_line[2*j+0] = (uint8_t)(pixel >> 8);   // MSB first
-        video->tx_line[2*j+1] = (uint8_t)(pixel & 0xFF); // LSB
+        video->tx_line[2*i+0] = (uint8_t)(pixel >> 8);   // MSB first
+        video->tx_line[2*i+1] = (uint8_t)(pixel & 0xFF); // LSB
     }
 
 
+    video->pending_pixels = n_pixels;
 
     // Don't advance frame_pos yet, do after DMA completes
     return true;  

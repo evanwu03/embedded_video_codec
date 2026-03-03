@@ -27,7 +27,11 @@ extern unsigned long video_len;
 #define MAX_PALETTE_COLORS (256U)
 #define PALETTE_BYTES_PER_COLOR (3U)
 
+// Size of stream header in bytes
 #define VIDEO_STREAM_HEADER_SIZE 9U 
+
+// Number of lines in DMA buffer
+#define VIDEO_CHUNK_LINES 4U 
 
 /// @brief defines the stream header containing metadata for a video file
 typedef struct { 
@@ -84,7 +88,8 @@ typedef struct {
     unsigned long frame_pixels;            // size of framebuffer in pixels 
     uint8_t* tmp_delta;                    // pointer to hold frames delta  
     uint8_t* tx_line;                     // pointer to 128-pixel line buffer, assumes 16-bit BGR values for now
-    unsigned long tx_line_pixels;          // size of tx_line in pixels
+
+    unsigned long pending_pixels;          // size of tx_line in pixels
     unsigned long frame_pos;               // current 
 
     bool start_requested;
