@@ -160,8 +160,8 @@ void lcd_init() {
     // Select row and column frame address 
     gpio_write(&lcd_cs, false);
     HAL_LCD_write_command(MADCTL);
-    //HAL_LCD_write_data(ORDER_RGB); 
-    HAL_LCD_write_data(ORDER_BGR); 
+    HAL_LCD_write_data(ORDER_RGB); 
+    //HAL_LCD_write_data(ORDER_BGR); 
     gpio_write(&lcd_cs, true);
     
 

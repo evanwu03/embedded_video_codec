@@ -50,11 +50,13 @@ void video_sm_transition(video_handler_t* video, video_state_t next_state){
 void video_state_idle(video_handler_t* video) { 
 
     // Start of video has been requested
-    if(video->start_requested) { 
+    /* if(video->start_requested) { 
         video->start_requested = false;
         video->cur = 0; // Make sure we start reading from start of file
         video_sm_transition(video, VIDEO_STATE_PARSE_HEADER);
-    }
+    } */
+    video->cur = 0; // Make sure we start reading from start of file
+    video_sm_transition(video, VIDEO_STATE_PARSE_HEADER);
 
     // Do nothing otherwise
 }
@@ -94,7 +96,13 @@ void video_state_decode(video_handler_t* video)  {
 
     // Done streaming video
     if (video->cur >= video->len) { 
-        video_sm_transition(video, VIDEO_STATE_IDLE);
+        //video_sm_transition(video, VIDEO_STATE_IDLE);
+        video->cur = VIDEO_STREAM_HEADER_SIZE + video->config.num_colors * PALETTE_BYTES_PER_COLOR;
+        
+        // reset frame and delta buffers 
+        // To-do: see if there is a more optimal way to clear the buffer, for now though this is fine for small resolutions
+        memset(video->tmp_delta, 0, video->frame_pixels);
+        memset(video->frame_buf, 0, video->frame_pixels);
         return;
     }
 

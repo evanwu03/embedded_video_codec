@@ -32,8 +32,11 @@
 
 
 // User sets dimensions of LCD here
-#define WIDTH 108
-#define HEIGHT 122 
+/* #define WIDTH 108
+#define HEIGHT 122  */
+#define WIDTH 128
+#define HEIGHT 128
+
 
 // Peripherals 
 struct wdt wdt_a;
@@ -90,8 +93,8 @@ int main(void)
     // Watchdog timer configuration
     WDT_hold(&wdt_a);
 
-    WDT_init(&wdt_a, WDT_A_BASE, &wdt_config_interval_timer_1s);
-    NVIC_EnableIRQ(WDT_A_IRQn);
+    //WDT_init(&wdt_a, WDT_A_BASE, &wdt_config_interval_timer_1s);
+    //NVIC_EnableIRQ(WDT_A_IRQn);
 
     // Watchdog LED
     gpio_init_output(&led1, PORT1_BASE, BIT0);

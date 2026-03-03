@@ -13,7 +13,7 @@ import os
 #FILENAME  = 'kanade_10fps.mp4'
 #FILENAME = 'ryo_yamada_128x128.mp4'
 #FILENAME = 'ryo_yamada_128x128_12fps.mp4'
-#FILENAME  = 'ryo2.mp4'
+FILENAME  = 'ryo2.mp4'
 #FILENAME = 'kikuri.mp4'
 #FILENAME = 'kikuri_10fps.mp4'
 #FILENAME = 'kikuri_20fps.mp4'
@@ -31,7 +31,7 @@ import os
 #FILENAME = 'btr.mp4'
 #FILENAME = 'btr2.mp4'
 #FILENAME = 'btr3.mp4'
-FILENAME = 'furry.mp4'
+#FILENAME = 'furry.mp4'
 #FILENAME  = 'bad_apple2.mp4'
 
 BASE = os.path.dirname(os.path.abspath(__file__))
