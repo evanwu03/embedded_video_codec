@@ -44,8 +44,9 @@ def main():
     # Parse Arguments 
     parser = argparse.ArgumentParser()
     parser.add_argument("input", help="Input video file path (mp4/mov/gif/etc)", type=str)
-    parser.add_argument("--colors", help="Number of colors in palette", default=256, type=int)
-    parser.add_argument("--preview", default=True, help="Optional preview output (gif/mp4)")
+    parser.add_argument("--out", default="../src/video_data.inc", help="Output .inc path")
+    parser.add_argument("--colors", help="Number of colors in palette. Only integer powers of 2 [1-256] are allowed", default=256, type=int)
+    parser.add_argument("--preview", default=False, help="Optional preview output (gif/mp4)")
 
     args = parser.parse_args()
 
@@ -151,7 +152,7 @@ def main():
 
 
         # Generate C style array to be used by an MCU
-        with open("../src/video_data.inc", "w") as f:
+        with open(args.out, "w") as f:
             for i, b in enumerate(data):
                 if i % 12 == 0:
                     f.write("\n")
