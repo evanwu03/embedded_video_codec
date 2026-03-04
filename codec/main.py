@@ -38,10 +38,15 @@ def validate_input(path_str):
 
 def main(): 
 
+    start_time = time.time()
+
+
     # Parse Arguments 
     parser = argparse.ArgumentParser()
     parser.add_argument("input", help="Input video file path (mp4/mov/gif/etc)", type=str)
     parser.add_argument("--colors", help="Number of colors in palette", default=256, type=int)
+    parser.add_argument("--preview", default=True, help="Optional preview output (gif/mp4)")
+
     args = parser.parse_args()
 
 
@@ -57,13 +62,18 @@ def main():
         # DEBUG: don't let users 
         assert args.colors <= 256
 
-        start_time = time.time()
-
+    
         # Optional: play back video you plan to compress
-        video_playback(filepath)
+        if args.preview:
+            print("==============================")
+            print("Playing preview of video...")
+            video_playback(filepath)
+            print("Finished playing video")
+            print("==============================")
 
 
 
+        print("Extracting frames from video... ")
         video = extract_video_frames(filepath)
         print(f'Video Resolution: {video.shape}')
 
@@ -118,8 +128,9 @@ def main():
         # [FRAME STREAM]
 
         # Compress video
-        encoded_frames = bytearray() 
         encoded_frames = compress_video(quantized_frames)
+        print("==============================")
+        print("Completed video compression. Writing output to disk")
 
         compressed_bytes = len(encoded_frames)
         print(f'Total Compression Ratio: {uncompressed_bytes/compressed_bytes:.2f}')
@@ -155,8 +166,12 @@ def main():
         print(f'Total time elapsed: {end_time-start_time:.2f}')
 
         # Playback compressed video
-        video_playback("output/video_decoded.mp4")
+        if args.preview:
+            print("==============================")
+            print("Playing back compressed video")
+            video_playback("output/video_decoded.mp4")
     
+
     except Exception as e:
         print(f"[Runtime Error]: {e}")
 
