@@ -15,17 +15,34 @@ from video import video_playback
 from video import extract_video_frames
 
 from config import *
+import argparse
 
 
 def main(): 
 
+    # Parse Arguments 
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input", help="Input video file path (mp4/mov/gif/etc)", type=str)
+    parser.add_argument("--colors", help="Number of colors in palette", default= 256, type=int)
+
+
+    args = parser.parse_args()
+
+
+
+
+
+    # Get path of video file
+    filepath = args.input 
+
+
     start_time = time.time()
 
     # Optional: play back video you plan to compress
-    video_playback(FILEPATH)
+    video_playback(filepath)
 
 
-    video = extract_video_frames(FILEPATH)
+    video = extract_video_frames(filepath)
     print(f'Video Resolution: {video.shape}')
 
     # Video Resolution specs
