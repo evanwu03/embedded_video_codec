@@ -35,19 +35,12 @@ void video_init(video_handler_t *video, const uint8_t *stream, unsigned long len
 }
 
 
-bool video_set_frame_buffer(video_handler_t* video, uint8_t* frame_buf, const unsigned long framebuf_pixels) { 
+bool video_set_frame_buffer(video_handler_t* video, uint8_t* frame_buf) { 
 
-    if (video == NULL || frame_buf == NULL || framebuf_pixels == 0) return false;
- 
-
-    // Validate with internally stored width*height 
-    unsigned long required_size = video->config.height * video->config.width;
-    if (framebuf_pixels < required_size) return false;
+    if (video == NULL || frame_buf == NULL) return false;
 
     video->frame_buf = frame_buf;
-    video->frame_pixels = framebuf_pixels;
     return true;
-
 }
 
 
@@ -220,6 +213,7 @@ parse_header_status_t parse_stream_header(video_handler_t* video) {
     video->config.file_format = file_format;
     video->config.width       = width;
     video->config.height      = height; 
+    video->frame_pixels       = width*height; // Compute frame_pixels here instead
     video->config.num_colors  = num_colors;
     video->config.codec_flags = codec_flags;
     

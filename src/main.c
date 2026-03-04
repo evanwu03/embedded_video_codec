@@ -32,16 +32,12 @@
 
 
 // User sets dimensions of LCD here
-/* #define WIDTH 108
-#define HEIGHT 122  */
 #define WIDTH 128
 #define HEIGHT 128
-/* #define WIDTH 80
-#define HEIGHT 80 */
 
 // Peripherals 
-struct wdt wdt_a;
-struct gpio led1;
+// struct wdt wdt_a;
+// struct gpio led1;
 
 // Peripheral Configurations 
 static const UART_config_t UART_A0_config = {
@@ -58,12 +54,12 @@ static const UART_config_t UART_A0_config = {
 };
 
 
-static const struct wdt_config_t wdt_config_interval_timer_1s = {
+/* static const struct wdt_config_t wdt_config_interval_timer_1s = {
     .mode_select = WDT_A_CTL_TMSEL, // Timer Interval Mode
     .interval_select = WDT_A_CTL_IS_4,
     .clock_source = WDT_A_CTL_SSEL_3,
     .counter_clear = WDT_A_CTL_CNTCL
-};
+}; */
 
 
 
@@ -88,16 +84,15 @@ int main(void)
     // Clock configuration stuff
     CS_setDCOCenteredFrequency(CS_DCO_FREQUENCY_24);
     CS_initClockSignal(CS_SMCLK, CS_DCOCLK_SELECT, CS_CLOCK_DIVIDER_1);
-    
+
     // Watchdog timer configuration
-    WDT_hold(&wdt_a);
-
     //WDT_init(&wdt_a, WDT_A_BASE, &wdt_config_interval_timer_1s);
+    //WDT_hold(&wdt_a);
     //NVIC_EnableIRQ(WDT_A_IRQn);
-
     // Watchdog LED
-    gpio_init_output(&led1, PORT1_BASE, BIT0);
-    gpio_write(&led1, false); // Turn off LED initially
+    //gpio_init_output(&led1, PORT1_BASE, BIT0);
+    //gpio_write(&led1, false); // Turn off LED initially
+
 
 
     // UART configuration
@@ -119,15 +114,12 @@ int main(void)
 
     // Video configurations
     video_init(&video, video_stream, video_len);
-    video_set_frame_buffer(&video, frame_buf, WIDTH*HEIGHT);
+    video_set_frame_buffer(&video, frame_buf);
     video_set_delta_buffer(&video, tmp_delta);
     video_set_tx_buffer(&video, tx_buf, 2*WIDTH*VIDEO_CHUNK_LINES);
-
     
     // Initialize state machine
     video_sm_init(&video);
-
-
 
 
     __enable_irq();
@@ -147,9 +139,9 @@ int main(void)
    
 }
 
-
-void WDT_A_IRQHandler(void) {
+/* void WDT_A_IRQHandler(void) {
        gpio_toggle(&led1);
-}
+} */
+
 
 

@@ -103,7 +103,7 @@ typedef struct {
 void video_init(video_handler_t* video, const uint8_t *stream, unsigned long len);
 
 // Attaches frame buffer to video handle
-bool video_set_frame_buffer(video_handler_t* video, uint8_t* framebuf, const unsigned long framebuf_len);
+bool video_set_frame_buffer(video_handler_t* video, uint8_t* framebuf);
 
 // Attach delta buffer to video handle
 bool video_set_delta_buffer(video_handler_t* video, uint8_t* delta);

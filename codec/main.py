@@ -51,8 +51,6 @@ def main():
     args = parser.parse_args()
 
 
-    # Get path of video file
-
     try: 
 
         filepath = validate_input(args.input)
