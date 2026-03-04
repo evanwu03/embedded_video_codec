@@ -5,6 +5,8 @@
 #include "../LcdDriver/hal_lcd.h"
 #include "../hal/include/gpio.h"
 
+#include <string.h> 
+
 
 typedef void (*state_handler_t)(video_handler_t *video);
 
@@ -85,6 +87,9 @@ void video_state_parse_header(video_handler_t* video) {
     // Build lookup table for bgr565 or whichever color format
     video_build_lut(video);
 
+    // What happens if i just set lcd address window once?
+    lcd_set_window(0, 0, video->config.width-1, video->config.height-1);
+
     // If successful transition to decoding state
     video_sm_transition(video, VIDEO_STATE_DECODE_FRAME);
 
@@ -141,10 +146,7 @@ void video_state_transmit(video_handler_t* video) {
 
     // One-time per frame: set LCD window and start RAM write stream
     if (!video->tx_started) {
-        lcd_set_window(0, 0, video->config.width-1, video->config.height-1);
-
         lcd_ramwr(); 
-
         video->tx_started = true;
         // fall through and send first line immediately (or return if you prefer)
     }

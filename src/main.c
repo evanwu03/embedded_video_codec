@@ -36,7 +36,8 @@
 #define HEIGHT 122  */
 #define WIDTH 128
 #define HEIGHT 128
-
+/* #define WIDTH 80
+#define HEIGHT 80 */
 
 // Peripherals 
 struct wdt wdt_a;
@@ -85,11 +86,9 @@ int main(void)
 {
 
     // Clock configuration stuff
-    //CS_setDCOCenteredFrequency(CS_DCO_FREQUENCY_12);
     CS_setDCOCenteredFrequency(CS_DCO_FREQUENCY_24);
     CS_initClockSignal(CS_SMCLK, CS_DCOCLK_SELECT, CS_CLOCK_DIVIDER_1);
     
-
     // Watchdog timer configuration
     WDT_hold(&wdt_a);
 

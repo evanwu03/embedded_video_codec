@@ -9,7 +9,7 @@ def video_playback(filepath: str) -> None:
     cap = cv2.VideoCapture(filepath)
     fps = cap.get(cv2.CAP_PROP_FPS)
     print(f'FPS: {fps}')
-    delay = 1/fps
+    delay = 1.0/fps
 
     while cap.isOpened():
         ret, frame = cap.read()
