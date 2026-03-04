@@ -4,7 +4,7 @@
 
 
 #include <stdint.h>
-
+#include <stdbool.h>
 
 
 /// @brief Initializes LCD display 
@@ -18,6 +18,21 @@ void lcd_init();
 /// @param y1 end y coordinate
 void lcd_set_window(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1); // Wrap coordinates into struct in future?
 
+
+
+/// @brief Initializes DMA SPI channel 
+void lcd_dma_init();
+
+
+/// @brief send pixel buffer over SPI DMA
+/// @param buf pointer to buffef 
+/// @param width size of buffer
+bool lcd_tx_pixels_dma(uint8_t* buf, unsigned long bytes);
+
+
+
+/// @brief Enables memory write mode for LCD 
+void lcd_ramwr(); 
 
 /// @brief Draw a single pixel at (x,y) pixel
 /// @param x x coordinate

@@ -72,8 +72,8 @@ void HAL_LCD_PORT_init(void) {
 void HAL_LCD_SPI_init(void) { 
 
     // Initialize and enable SPI module 
-    SPI_initModule(EUSCI_B0, &spi_config);
-    SPI_enableModule(EUSCI_B0);
+    spi_initModule(EUSCI_B0, &spi_config);
+    spi_enableModule(EUSCI_B0);
 
     gpio_write(&lcd_cs, true);
     gpio_write(&lcd_dc, true); // Set to data mode by default
@@ -86,7 +86,7 @@ void HAL_LCD_write_command(uint8_t command) {
     gpio_write(&lcd_dc, false);
     gpio_write(&lcd_cs, false);
 
-    SPI_sendByte(EUSCI_B0, command);
+    spi_sendByte(EUSCI_B0, command);
 
     //gpio_write(&lcd_cs, true);
 } 
@@ -98,7 +98,7 @@ void HAL_LCD_write_data(uint8_t data) {
     gpio_write(&lcd_dc, true);
     gpio_write(&lcd_cs, false);
 
-    SPI_sendByte(EUSCI_B0, data);
+    spi_sendByte(EUSCI_B0, data);
     
     //gpio_write(&lcd_cs, true);
 }

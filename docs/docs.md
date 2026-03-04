@@ -59,11 +59,9 @@ I think before we even touch the MSP432, we need a tool that:
 - Currently exploring palette quantization techniques such as K-means and Median cut. My method currently just naively truncate bits to fit them into 8, 12 and 16 bits but no statistical methods are employed to cluster similar colors together. 
 
 # 20251129
-  
 I noticed throughout this project I have been slowly adding new pieces to the compression pipeline I think for me it started with learning delta compression, then learning VLE To compact bytes, then applying RLE to exploit the temporal behavior from delta compression and zigzag encoding to support VLE by mapping all negative numbers to positive ones. After all of that I supplemented the system with a color quantizer to reduce the RGB down to 8 bits/256 colors. With that said and done the performance was getting pretty good, but that's when I solved the issue with my RLE by adding run length maximums and adding a control bit to mark starts of run. Now we have looped back and are now optimizing the RLE with vertical replication
 
 # 20251219
-
 Goals for today are to: 
 - ~~Add frame boundaries in my run length encoder~~  
 - ~~develop python implementation of decoder~~
@@ -82,12 +80,27 @@ Goals for today are to:
 5. A global stream header is prepended to the compressed data which holds metadata for the decoder.
 
 
-
 # 20251226 
 - Update: At least the python decoder implementation finally works after entirely scrapping the zigzag encoder and instead relying on uint8 overflow/underflow behavior to ensure that delta frames wrap around to the correct value. This was definitely an area I should have tested more thoroughly, but with each bug I ran into I feel like it challenged me to make sure I understand the code I was writing. 
   
 - I played around with a few things like trying to truncate a 24 bit palette to 16 bit palette after the fact however it appears doing so does not produce the intended colors, likely due to some nonlinearity in the color space I mapped, so I decided that I would keep all quantization with 24 bit BGR inputs. This hurts compression slightly because we can not exploit that fact that quantizing a 16 bit color palette increases the odds that more colors map to the same color, but as I've noticed this harms the video quality which is not something I'm willing to sacrifice. 
 
-- The other I verified that I can decode a frame and then truncate it to BGR565 and then write that to a raw .bgr565 file. I then played the .bgr565 file using ffplay and it worked! This gives me high confidence that the decoder works for decoding to 24 bits and likewise 16 bit colors.
+- The other thing I verified that I can decode a frame and then truncate it to BGR565 and then write that to a raw .bgr565 file. I then played the .bgr565 file using ffplay and it worked! This gives me high confidence that the decoder works for decoding to 24 bits and likewise 16 bit colors.
 
-- Other than that I mainly refactored and tidied up the codebase a bit, adding comments where necessary or deleting deprecated code. Currently a problem I've noticed is that extreme memory usage for larger videos during quantization that does cause my PC to crash. So it dawned on me that maybe it's a really bad idea to try and brute force all pairwise euclidean distances in my quantizer, so I have decided to be at least a little smarter and preallocate the quantized frames and quantize frame by frame instead. 
+- Other than that I mainly refactored and tidied up the codebase a bit, adding comments where necessary or deleting deprecated code. Currently a problem I've noticed is that extreme memory usage for larger videos during quantization that does cause my PC to crash. So it dawned on me that maybe it's a really bad idea to try and brute force all pairwise euclidean distances in my quantizer, so I have decided to be at least a little smarter and preallocate the quantized frames and quantize frame by frame instead. This is still not a scalable approach as I've encountered with videos of at least 30 seconds and resolution of upwards to 1020x780p. Preallocating a buffer will not work here due to excessive memory usage.
+
+
+# 2026228 & 20250301
+Most work these past two days has been defining the state machine and refactoring data types. 
+I've decided to create one structure to handle video data and operations. This is helped simplify my test as well since
+data can be kept encapsulated by video object
+
+# 20260302 
+
+- Got the video printing to screen but it corrupts after each frame nor does it print to 128x128; Only a portion of the screen is printed to.
+- After some challenges with the DMA buffer (SPI only transfers 8 bits at a time and we tried to send 16 bit words, so endianess was incorrect), we are successful in playing an video. The first video in question was requested by my friend of dancing cyborg furry.
+- Next step is to optimize the frame rate since the original in question was rendered at 25.0 fps. I've done some math before I think and 25.0 fps should be possible on the msp432. 
+- Delay between transmitting frames was about 35 ms. I've decided to precompute a lookup table in BGR565 format from color palette during initialization to save on cycles. Didn't see too noticeable improvement from this however.
+- Next optimization technique will be increasing the size of the DMA buffer to store more than 1 line or possibly in chunks
+
+

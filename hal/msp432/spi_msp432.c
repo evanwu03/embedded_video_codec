@@ -5,7 +5,7 @@
 /// @brief Initializes eUSCI B module for 3-Pin SPI usage
 /// @param spi 
 /// @param config 
-void SPI_initModule(EUSCI_B_Type* spi, const SPI_Config_t* config) {
+void spi_initModule(EUSCI_B_Type* spi, const SPI_Config_t* config) {
 
     /*  // --- Configure the SPI pins based on module ---
     if (spi == EUSCI_B0 || spi == EUSCI_B0_SPI) {
@@ -52,14 +52,14 @@ void SPI_initModule(EUSCI_B_Type* spi, const SPI_Config_t* config) {
 
 /// @brief Enables SPI module by clearing SWRST bit 
 /// @param  spi SPI module to be enabled
-void SPI_enableModule(EUSCI_B_Type* spi)  {
+void spi_enableModule(EUSCI_B_Type* spi)  {
     spi->CTLW0 &= ~EUSCI_B_CTLW0_SWRST;    // Release eUSCI state machine from reset
 }
 
 
 /// @brief Disables SPI module by setting SWRST bit 
 /// @param  spi SPI module to be enabled
-void SPI_disableModule(EUSCI_B_Type* spi)  {
+void spi_disableModule(EUSCI_B_Type* spi)  {
     spi->CTLW0 |= EUSCI_B_CTLW0_SWRST;    // Release eUSCI state machine from reset
 }
 
@@ -67,7 +67,7 @@ void SPI_disableModule(EUSCI_B_Type* spi)  {
 /// @brief Sends a bytes from master to slave 
 /// @param spi SPI module 
 /// @param data byte to be sent
-void SPI_sendByte(EUSCI_B_Type* spi, const uint8_t data) { 
+void spi_sendByte(EUSCI_B_Type* spi, const uint8_t data) { 
     while(!(spi->IFG & EUSCI_B_IFG_TXIFG)); // Use busy wait loop 
     spi->TXBUF = data; 
 
@@ -78,7 +78,7 @@ void SPI_sendByte(EUSCI_B_Type* spi, const uint8_t data) {
 /// @brief Receives a byte from master
 /// @param spi SPI module
 /// @return returns the byte transmitted
-uint8_t SPI_receiveByte(EUSCI_B_Type* spi) { 
+uint8_t spi_receiveByte(EUSCI_B_Type* spi) { 
     while(!(spi->IFG & EUSCI_B_IFG_RXIFG));  // wait until data is received
     return spi->RXBUF;
 }
@@ -86,7 +86,7 @@ uint8_t SPI_receiveByte(EUSCI_B_Type* spi) {
 /// @brief Enables SPI interrrupts
 /// @param spi SPI module to enable interrupts on 
 /// @param mask bitmask for interrupt selection
-void SPI_enableInterrupts(EUSCI_B_Type* spi, const uint8_t mask) { 
+void spi_enableInterrupts(EUSCI_B_Type* spi, const uint8_t mask) { 
 
     uint8_t locMask;
 
@@ -100,7 +100,7 @@ void SPI_enableInterrupts(EUSCI_B_Type* spi, const uint8_t mask) {
 /// @brief Disables SPI interrupts
 /// @param spi SPI module to enable interrupts on
 /// @param mask bitmask for interrupt selection
-void SPI_disableInterrupts(EUSCI_B_Type* spi, const uint8_t mask) { 
+void spi_disableInterrupts(EUSCI_B_Type* spi, const uint8_t mask) { 
      
     uint8_t locMask;
 

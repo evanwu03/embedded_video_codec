@@ -1,0 +1,83 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
+  <diagram name="Page-1" id="woUTycC5hhNP64IwZlBw">
+    <mxGraphModel dx="1360" dy="963" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CCR73866nuBq3d0Z0GH--22" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;dashed=1;dashPattern=12 12;" parent="1" vertex="1">
+          <mxGeometry x="190" y="500" width="470" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="CCR73866nuBq3d0Z0GH--1" value="To Do :&amp;nbsp;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;strike&gt;finished parsing functions for header and palette&amp;nbsp;&lt;/strike&gt;&lt;/li&gt;&lt;li&gt;&lt;strike&gt;Implement state machine for video playback&lt;/strike&gt;&lt;/li&gt;&lt;li&gt;&lt;strike&gt;translate decoding API to MCU&lt;/strike&gt;&lt;/li&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="120" y="90" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="CCR73866nuBq3d0Z0GH--6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="CCR73866nuBq3d0Z0GH--3" target="CCR73866nuBq3d0Z0GH--4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CCR73866nuBq3d0Z0GH--3" value="VIDEO_STATE_IDLE" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="260" y="270" width="190" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CCR73866nuBq3d0Z0GH--7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="CCR73866nuBq3d0Z0GH--4" target="CCR73866nuBq3d0Z0GH--8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="355" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Hs8jLWQSXVd4nhGKKPOX-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="CCR73866nuBq3d0Z0GH--4" target="CCR73866nuBq3d0Z0GH--3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="420" />
+              <mxPoint x="510" y="308" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CCR73866nuBq3d0Z0GH--4" value="VIDEO_STATE_PARSE_HEADER" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="235" y="390" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CCR73866nuBq3d0Z0GH--14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="CCR73866nuBq3d0Z0GH--8" target="CCR73866nuBq3d0Z0GH--13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CCR73866nuBq3d0Z0GH--8" value="VIDEO_STATE_DECODE_FRAME" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="231.25" y="540" width="247.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CCR73866nuBq3d0Z0GH--18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="CCR73866nuBq3d0Z0GH--13" target="CCR73866nuBq3d0Z0GH--8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="580" y="750" />
+              <mxPoint x="580" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CCR73866nuBq3d0Z0GH--19" value="While there are more frames" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="CCR73866nuBq3d0Z0GH--18" vertex="1" connectable="0">
+          <mxGeometry x="0.0253" relative="1" as="geometry">
+            <mxPoint x="-20" y="15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CCR73866nuBq3d0Z0GH--20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="CCR73866nuBq3d0Z0GH--13" target="CCR73866nuBq3d0Z0GH--3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="355" y="830" />
+              <mxPoint x="710" y="830" />
+              <mxPoint x="710" y="295" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CCR73866nuBq3d0Z0GH--21" value="End of video reached&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="CCR73866nuBq3d0Z0GH--20" vertex="1" connectable="0">
+          <mxGeometry x="-0.5869" y="-3" relative="1" as="geometry">
+            <mxPoint x="18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CCR73866nuBq3d0Z0GH--13" value="VIDEO_STATE_TRANSMIT_FRAME" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="231.25" y="720" width="247.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CCR73866nuBq3d0Z0GH--23" value="FRAME LOOP" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="210" y="500" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CCR73866nuBq3d0Z0GH--25" value="*Probably want a way to replay a video in the future or a nice menu&amp;nbsp; in the future.&lt;div&gt;I could just implement an ISR to check if a button was pressed&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="130" y="205" width="450" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Hs8jLWQSXVd4nhGKKPOX-2" value="If there is an error while parsing" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="435" y="348" width="190" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

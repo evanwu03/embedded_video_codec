@@ -2,6 +2,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <assert.h>
 
 #include <msp432p401r.h>
 
@@ -13,21 +14,30 @@
 #include "../hal/include/wdt.h"
 #include "../hal/include/gpio.h"
 
+// Driverlib
+#include <ti/devices/msp432p4xx/driverlib/driverlib.h>
+
+
 // LCD driver 
 #include "../LcdDriver/lcd.h"
 
 
 // Pixel art byte map
-#include "pixel_map.h"
-
-// Video file 
-//#include "video.h"
+//#include "../include/pixel_map.h"
 
 
+// Video Player 
+#include "../include/video.h"
+#include "../include/video_fsm.h"
+
+
+// User sets dimensions of LCD here
+/* #define WIDTH 108
+#define HEIGHT 122  */
 #define WIDTH 128
-#define HEIGHT 128 
-
-
+#define HEIGHT 128
+/* #define WIDTH 80
+#define HEIGHT 80 */
 
 // Peripherals 
 struct wdt wdt_a;
@@ -56,15 +66,43 @@ static const struct wdt_config_t wdt_config_interval_timer_1s = {
 };
 
 
+
+// Video Handler 
+video_handler_t video;
+video_handler_t* video_ctx = &video;
+
+// Frame buffers
+static uint8_t frame_buf[WIDTH*HEIGHT];
+static uint8_t tmp_delta[WIDTH*HEIGHT];
+
+// NOTE: Apparently DMA (PL230) is limited to 1024 data transfers in otherwards buffer is limited to 1024 bytes on 8-bit SPI
+static uint8_t tx_buf[2*WIDTH*VIDEO_CHUNK_LINES];
+_Static_assert(sizeof(tx_buf)/sizeof(uint8_t) <= 1024, "DMA in MSP432 is limited up to 1024 data transfers");
+
+
+
+
 int main(void)
 {
+
+    // Clock configuration stuff
+    CS_setDCOCenteredFrequency(CS_DCO_FREQUENCY_24);
+    CS_initClockSignal(CS_SMCLK, CS_DCOCLK_SELECT, CS_CLOCK_DIVIDER_1);
+    
+    // Watchdog timer configuration
     WDT_hold(&wdt_a);
 
-    WDT_init(&wdt_a, WDT_A_BASE, &wdt_config_interval_timer_1s);
-    NVIC_EnableIRQ(WDT_A_IRQn);
+    //WDT_init(&wdt_a, WDT_A_BASE, &wdt_config_interval_timer_1s);
+    //NVIC_EnableIRQ(WDT_A_IRQn);
 
-    UART_initModule(EUSCI_A0, &UART_A0_config); 
-    UART_enableModule(EUSCI_A0); 
+    // Watchdog LED
+    gpio_init_output(&led1, PORT1_BASE, BIT0);
+    gpio_write(&led1, false); // Turn off LED initially
+
+
+    // UART configuration
+    uart_initModule(EUSCI_A0, &UART_A0_config); 
+    uart_enableModule(EUSCI_A0); 
 
     // Enable UART0 Pins
     // P1.2->RX
@@ -73,28 +111,38 @@ int main(void)
     P1->SEL1 &= ~(BIT2 | BIT3);
 
     
-    gpio_init_output(&led1, PORT1_BASE, BIT0);
-    gpio_write(&led1, false); // Turn off LED initially
+
 
     lcd_init();
+    lcd_dma_init();
+
+
+    // Video configurations
+    video_init(&video, video_stream, video_len);
+    video_set_frame_buffer(&video, frame_buf, WIDTH*HEIGHT);
+    video_set_delta_buffer(&video, tmp_delta);
+    video_set_tx_buffer(&video, tx_buf, 2*WIDTH*VIDEO_CHUNK_LINES);
+
     
+    // Initialize state machine
+    video_sm_init(&video);
+
+
 
 
     __enable_irq();
 
+    //lcd_draw_image(wolf_girl_map, 0, 0, 128, 128);
 
-    //lcd_draw_image(shark_square_128x128_map, 0, 0, WIDTH, HEIGHT);
-    //lcd_draw_image(bocchi_twin_map, 0, 0, WIDTH, HEIGHT);
-    //lcd_draw_image(kokomi_128x128_map, 0, 0, WIDTH, HEIGHT);
-    //lcd_draw_image(ronald_wojak_128x128_map, 0, 0 , WIDTH, HEIGHT);
-    //lcd_draw_image(hatsune_miku_128x128_map, 0, 0,  WIDTH, HEIGHT);
-    //lcd_draw_image(orca_128x128_map, 0, 0, WIDTH, HEIGHT);
-    lcd_draw_image(wolf_girl_map, 0, 0, WIDTH, HEIGHT);
+    
+    // Request start 
+    // To-do user can press button to start video
+    video.start_requested = true;
 
-
+    // Run state machine here
     while (1)
     {
-
+        video_sm_run(&video);
     }
    
 }
