@@ -89,8 +89,8 @@ typedef struct {
     uint8_t* tmp_delta;                    // pointer to hold frames delta  
     uint8_t* tx_line;                     // pointer to 128-pixel line buffer, assumes 16-bit BGR values for now
 
-    unsigned long pending_pixels;          // size of tx_line in pixels
-    unsigned long frame_pos;               // current 
+    volatile unsigned long pending_pixels;          // size of tx_line in pixels
+    volatile unsigned long frame_pos;               // current 
 
     bool start_requested;
     bool tx_started;
