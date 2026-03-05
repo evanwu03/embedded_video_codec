@@ -104,3 +104,8 @@ data can be kept encapsulated by video object
 - Next optimization technique will be increasing the size of the DMA buffer to store more than 1 line or possibly in chunks
 
 
+# 20260304 
+
+- Added several quality of life features to make it easier to compress and upload videos to the MSP432. First feature I added was a command line parser which allows the user to input their own video and change other codec settings such as number of colors. 
+- I have also cleaned up firmware logic and used some basic compiler optimization to head reduce memory usage and speed up the program. It became apparent to me in the process I forgot to make the frame index pointer and requested pixels field to be volatile in the DMA ISR. Testing the program under different compiler optimizations such as -O1 actually helped me uncover a race condition in my state machine logic which I assume was being masked by -O1 and I was just getting lucky with timing.
+
