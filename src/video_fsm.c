@@ -132,9 +132,9 @@ void video_state_transmit(video_handler_t* video) {
      // If a DMA transfer is in progress, do nothing this tick.
     // To-do we don't necessarily want the CPU to do nothing. We should be double buffering DMA
 
-    // we need to wait here first because I think race condition happens between main and ISR with 
+    // we need to wait here first because I think race condition happens because both main and ISR try to modify 
     // video.frame_pos 
-    
+
     if (video->tx_dma_busy) {
         return;
     }

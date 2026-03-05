@@ -86,12 +86,12 @@ int main(void)
 
     
 
-
+    // Initalize LCD screen
     lcd_init();
     lcd_dma_init();
 
 
-    // Video configurations
+    // Initialize video handler
     video_init(&video, video_stream, video_len);
     video_set_frame_buffer(&video, frame_buf);
     video_set_delta_buffer(&video, tmp_delta);
