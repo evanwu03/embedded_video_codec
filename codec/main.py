@@ -14,14 +14,19 @@ from decoder import decoder
 from video import video_playback
 from video import extract_video_frames
 
-from config import *
-from pathlib import Path
 import argparse
-
-
-
 from pathlib import Path
-import sys
+import os
+
+
+# File paths
+BASE = os.path.dirname(os.path.abspath(__file__))
+FRAME_TXT_DUMP = os.path.join(BASE, 'output', 'delta.txt')
+DELTA_BIN = os.path.join(BASE, 'output', 'delta.bin')
+ENCODED_TXT_DUMP = os.path.join(BASE, 'output', 'encoded.txt')
+ENCODED_BIN  = os.path.join(BASE, 'output', 'encoded.bin')
+DECODED_TXT_DUMP = os.path.join(BASE, 'output', 'decoded_pixels.txt')
+DECODED_BIN = os.path.join(BASE, 'output', 'decoded_pixels.bin')
 
 
 def validate_input(path_str):

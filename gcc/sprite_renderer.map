@@ -812,42 +812,42 @@ LOAD build/hal/msp432/wdt_msp432.o
 .iplt           0x0000282c        0x0
  .iplt          0x0000282c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x0000282c    0x246c0
+.rodata         0x0000282c    0x3a8e4
  *(.rodata)
  *(.rodata.*)
  .rodata.UART_A0_config
                 0x0000282c       0x18 build/src/main.o
  .rodata.video_stream
-                0x00002844    0x24683 build/src/video.o
+                0x00002844    0x3a8a5 build/src/video.o
                 0x00002844                video_stream
- *fill*         0x00026ec7        0x1 
+ *fill*         0x0003d0e9        0x3 
  .rodata.state_handlers
-                0x00026ec8       0x10 build/src/video_fsm.o
+                0x0003d0ec       0x10 build/src/video_fsm.o
  .rodata.spi_config
-                0x00026ed8        0xc build/LcdDriver/hal_lcd_msp432.o
+                0x0003d0fc        0xc build/LcdDriver/hal_lcd_msp432.o
  .rodata.g_pulEnRegs
-                0x00026ee4        0x8 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
+                0x0003d108        0x8 /home/evanwu03/ti/simplelink_msp432p4_sdk_3_40_01_02//source/ti/devices/msp432p4xx/driverlib/gcc/msp432p4xx_driverlib.a(interrupt.o)
 
-.eh_frame       0x00026eec        0x0
- .eh_frame      0x00026eec        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.eh_frame       0x0003d110        0x0
+ .eh_frame      0x0003d110        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.ARM.exidx      0x00026eec        0x8
-                0x00026eec                        __exidx_start = .
+.ARM.exidx      0x0003d110        0x8
+                0x0003d110                        __exidx_start = .
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x00026eec        0x8 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+ .ARM.exidx     0x0003d110        0x8 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
                                  0x10 (size before relaxing)
-                0x00026ef4                        __exidx_end = .
+                0x0003d118                        __exidx_end = .
 
-.ARM.extab      0x00026ef4        0x0
+.ARM.extab      0x0003d118        0x0
  *(.ARM.extab* .gnu.linkonce.armextab.*)
- .ARM.extab     0x00026ef4        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
-                0x00026ef4                        __etext = .
+ .ARM.extab     0x0003d118        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
+                0x0003d118                        __etext = .
 
-.rel.dyn        0x00026ef4        0x0
- .rel.iplt      0x00026ef4        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x0003d118        0x0
+ .rel.iplt      0x0003d118        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000       0x70 load address 0x00026ef4
-                0x00026ef4                        __data_load__ = LOADADDR (.data)
+.data           0x20000000       0x70 load address 0x0003d118
+                0x0003d118                        __data_load__ = LOADADDR (.data)
                 0x20000000                        __data_start__ = .
  *(.data)
  .data          0x20000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
@@ -918,13 +918,13 @@ LOAD build/hal/msp432/wdt_msp432.o
                 0x20000070                        __data_end__ = .
 
 .tm_clone_table
-                0x20000070        0x0 load address 0x00026f64
+                0x20000070        0x0 load address 0x0003d188
  .tm_clone_table
                 0x20000070        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  .tm_clone_table
                 0x20000070        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtend.o
 
-.igot.plt       0x20000070        0x0 load address 0x00026f64
+.igot.plt       0x20000070        0x0 load address 0x0003d188
  .igot.plt      0x20000070        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
 .bss            0x20000400     0x9200
