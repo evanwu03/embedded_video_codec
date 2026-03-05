@@ -44,7 +44,8 @@ CFLAGS = -I.. \
 	-gstrict-dwarf \
 	-Wall \
 	"-I$(GCC_ARMCOMPILER)/arm-none-eabi/include/newlib-nano" \
-	"-I$(GCC_ARMCOMPILER)/arm-none-eabi/include"
+	"-I$(GCC_ARMCOMPILER)/arm-none-eabi/include" \
+	-O1 \
 
 LFLAGS = -Wl,-T,../gcc/msp432p401r.lds \
 	"-Wl,-Map,$(NAME).map" \

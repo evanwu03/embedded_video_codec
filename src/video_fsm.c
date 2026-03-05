@@ -128,6 +128,18 @@ void video_state_decode(video_handler_t* video)  {
 /// @param video 
 void video_state_transmit(video_handler_t* video) { 
 
+
+     // If a DMA transfer is in progress, do nothing this tick.
+    // To-do we don't necessarily want the CPU to do nothing. We should be double buffering DMA
+
+    // we need to wait here first because I think race condition happens because both main and ISR try to modify 
+    // video.frame_pos 
+
+    if (video->tx_dma_busy) {
+        return;
+    }
+
+
     // finished?
     if (video->frame_pos >= video->frame_pixels) {
         // Must pull CS back high after writing
@@ -139,10 +151,6 @@ void video_state_transmit(video_handler_t* video) {
         return;
     }
 
-    // If a DMA transfer is in progress, do nothing this tick.
-    if (video->tx_dma_busy) {
-        return;
-    }
 
     // One-time per frame: set LCD window and start RAM write stream
     if (!video->tx_started) {
