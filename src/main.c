@@ -71,7 +71,7 @@ int main(void)
 
     // Clock configuration stuff
     CS_setDCOCenteredFrequency(CS_DCO_FREQUENCY_24);
-    CS_initClockSignal(CS_SMCLK, CS_DCOCLK_SELECT, CS_CLOCK_DIVIDER_1);
+    CS_initClockSignal(CS_SMCLK, CS_DCOCLK_SELECT, CS_CLOCK_DIVIDER_2);
 
 
     // UART configuration
