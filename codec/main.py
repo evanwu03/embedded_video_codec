@@ -77,8 +77,19 @@ def main():
 
 
 
+
+        # Encoding logic 
+        # For each frame in video:
+        #   Apply delta encoding 
+        #   Apply run length encoding 
+        #   Append to compressed video output
+    
+
         print("Extracting frames from video... ")
-        video = extract_video_frames(filepath)
+        video = extract_video_frames(filepath) # To-do break this up into a loop
+
+
+
         print(f'Video Resolution: {video.shape}')
 
         # Video Resolution specs
@@ -87,13 +98,27 @@ def main():
         num_frames = len(video)
 
         # Flatten to 1D list of pixels
+        # TO-DO get rid of this and just stream the pixels
         pixels = np.concatenate([frame.ravel() for frame in video])
+        
 
-        uncompressed_bytes = len(pixels)*4
+        
+        print("Finished flattening frames...")
+        uncompressed_bytes = height*width*num_frames*4 # If naively stored as uint32
         print(f'Uncompressed file size: {uncompressed_bytes}')
 
+        hist = {}
+        for color in pixels: 
+            hist[color] = hist.get(color, 0) + 1
+
+        unique_colors = np.array(list(hist.keys()), dtype=np.uint32)
+
+
         # Generate Color palette
-        color_palette = generate_palette(pixels, num_colors)
+        print("Generating Color Palette...")
+        color_palette = generate_palette(unique_colors, num_colors)
+        print("Finished Generating Color Palette.")
+
 
         # Stack BGR channels into 3 separate byte vectors 
         palette_b = (color_palette >> 16)  & 0xFF
@@ -103,6 +128,9 @@ def main():
         assert palette_bgr.shape == (num_colors, 3)
 
         # Quantize frames 
+        # DEBUG 
+        print(color_palette)
+        print("Begin Quantizing Video...")
         quantization_start_time = time.time()
 
 
@@ -112,7 +140,7 @@ def main():
         for i in range(num_frames):
 
             frame_pixels = video[i].reshape(-1)   
-            q = quantize_pixels(frame_pixels, color_palette)
+            q = quantize_pixels(frame_pixels, color_palette) 
             quantized_frames[i] = q.reshape(height, width)
 
         assert quantized_frames.min() >= 0 
@@ -180,5 +208,5 @@ def main():
         print(f"[Runtime Error]: {e}")
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":#
     main()
