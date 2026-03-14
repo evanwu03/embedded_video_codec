@@ -32,7 +32,7 @@ The video player uses a 4-state finite state machine structure for managing vide
 
 At the moment, the video player perpetually loops the video and does not return to the IDLE state after the video ends. In the future, button inputs will be added to allow the user to stop/start the video or move to different frames in the video.
 
-![Video Player FSM diagram](image-2.png)
+![Video Player FSM diagram](FSM.png)
 
 
 # Limitations and Future Improvements
