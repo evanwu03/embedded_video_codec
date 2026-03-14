@@ -1,7 +1,4 @@
 
-
-
-
 # 2025117 
 - Started writing HAL LCD drivers 
 - Consolidated HAL library from other MSP432 projects to current project
@@ -108,4 +105,9 @@ data can be kept encapsulated by video object
 
 - Added several quality of life features to make it easier to compress and upload videos to the MSP432. First feature I added was a command line parser which allows the user to input their own video and change other codec settings such as number of colors. 
 - I have also cleaned up firmware logic and used some basic compiler optimization to head reduce memory usage and speed up the program. It became apparent to me in the process I forgot to make the frame index pointer and requested pixels field to be volatile in the DMA ISR. Testing the program under different compiler optimizations such as -O1 actually helped me uncover a race condition in my state machine logic which I assume was being masked by -O1 and I was just getting lucky with timing.
+
+
+# 20260308 
+
+- Turns out I misunderstood how Median Cut algorithm works. You know how Median cut takes a histogram or set of unique colors in the image/video? Well I was feeding every single pixel over the entire video. This greatly explains why my encoder was so memory hungry for larger videos. To solve this, I computed the histogram first, then I gave that as the parameter to the Median Cut function. For some reason, I'm also starting to see improvements in the compression. I wonder what the reason for this was?
 

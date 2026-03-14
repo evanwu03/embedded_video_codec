@@ -80,7 +80,7 @@ def averageColor(pixels: np.ndarray) -> np.ndarray:
      return (B << 16) | (G << 8) | R
 
 
-
+# To-Do Brute force calculating the euclidean distance is too slow, perhaps we use a K-d tree instead
 def quantize_pixels(pixels: np.ndarray, palette: np.ndarray) -> np.ndarray:
     
     
