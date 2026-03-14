@@ -1,7 +1,4 @@
 
-
-
-
 # 2025117 
 - Started writing HAL LCD drivers 
 - Consolidated HAL library from other MSP432 projects to current project
