@@ -129,7 +129,7 @@ def main():
 
         # Quantize frames 
         # DEBUG 
-        print(color_palette)
+        #print(color_palette)
         print("Begin Quantizing Video...")
         quantization_start_time = time.time()
 
