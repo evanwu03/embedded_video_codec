@@ -1,8 +1,9 @@
 ## Summary
 
 This project is a software video codec written for bare metal microcontrollers such as the MSP432P410R. 
-The MCU video player was designed to be as memory-efficient and require little computational overhead as possible, keeping in mind the limited memory (64kB RAM and 256kB flash) of the MSP432P4xx series MCUs. While there is much room for improvement, the proof of concept has been successfully accomplished, demonstrating how video compression algorithms can be deployed to embedded systems. 
+The MCU video player was designed to be as memory-efficient and require little computational overhead as possible, keeping in mind the limited memory (64kB RAM and 256kB flash) of the MSP432P4xx series MCUs. The LCD drivers and codec APIs were written to be as platform-independent as necessary, allowing portability to other microcontrollers. While there is much room for improvement, the proof of concept has been successfully accomplished, demonstrating how video compression algorithms can be deployed to embedded systems. 
 
+**At the moment I am not currently developing this project** further due to school, but I may return in the future to refine existing implementations and test new video compression algorithms.
 
 ## Prerequisites 
 
